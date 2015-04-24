@@ -10,5 +10,5 @@ package in.syntel.BOK.ATM;
  * @author KB5024427
  */
 public class AccountSelection {
-    
+    private int id;
 }

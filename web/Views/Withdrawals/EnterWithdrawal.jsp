@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,7 +15,13 @@
     <body>
         <h1>Enter Amount to Withdraw</h1>
         <div>
-            
+            <s:if test="hasActionErrors()">
+                <s:actionerror/>
+            </s:if>
+            <s:form action="withdraw">
+                <s:textfield name="withdrawamt" size="10"/>
+                <s:submit value="Enter"/>
+            </s:form>
         </div>
     </body>
 </html>

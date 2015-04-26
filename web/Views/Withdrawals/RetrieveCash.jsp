@@ -14,7 +14,7 @@
     <body>
         <h1>Retrieve Your Withdrawal</h1>
         <div>
-            Picture/button of cash slot.<br>
+            <a href="WithdrawalSuccess.jsp"><img src="cashslot.jpeg" alt="Submit"/></a><br>
             (Press the image to simulate retrieving your withdrawal.)
         </div>
     </body>

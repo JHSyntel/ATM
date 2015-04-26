@@ -15,11 +15,13 @@
     <body>
         <h1>Confirm Amount Deposited</h1>
         <div>
-            <s:property value="depositcashamt"/>
-            <s:form action="Deposit">
-                <s:submit value="Yes"/>
+            You deposited: <s:property value="getText('{0,number,currency}', {depositcashamt})"/>
+            <s:form method="link">
+                <s:submit value="Yes" formaction="Deposit"/>
+                <s:submit value="No" formaction="WrongAmount.jsp"/>
             </s:form>
-            <a href="WrongAmount.jsp"><s:submit value="No"/></a>
+            
+            
         </div>
     </body>
 </html>

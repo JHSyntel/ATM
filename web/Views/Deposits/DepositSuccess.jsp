@@ -15,8 +15,8 @@
     <body>
         <h1>Success</h1>
         <div>
-            Your transaction completed successfully.<br>
-            Do you want another transaction?<br>
+            Your deposit completed successfully.<br>
+            Would you like to perform another transaction?<br>
             Yes(main menu)/No(quit)
         </div>
     </body>

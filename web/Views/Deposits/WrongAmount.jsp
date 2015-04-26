@@ -15,9 +15,12 @@
     <body>
         <h1>Retrieve Your Deposit</h1>
         <div>
-            Image of deposit slot.<br>
+            <img src="depositslot.jpeg"/><br>
             Please try again or see a teller for assistance.<br>
-            <a href="SelectDepositType.jsp"><s:submit value="Try Again"/></a>/Quit
+            <form method="link">
+                <input type="submit" value="Try Again" formaction="SelectDepositType.jsp"/>
+                <input type="submit" value="Quit"/>
+            </form>
         </div>
     </body>
 </html>

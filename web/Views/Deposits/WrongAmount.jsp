@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,7 +17,7 @@
         <div>
             Image of deposit slot.<br>
             Please try again or see a teller for assistance.<br>
-            Try again(SelectDepositType)/Quit
+            <a href="SelectDepositType.jsp"><s:submit value="Try Again"/></a>/Quit
         </div>
     </body>
 </html>

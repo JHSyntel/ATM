@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,7 +15,8 @@
     <body>
         <h1>Select Deposit Type</h1>
         <div>
-            CASH or CHECK
+            <a href="InsertCash.jsp"><s:submit value="Cash"/></a>
+            <a href="InsertCheck.jsp"><s:submit value="Check"/></a>
         </div>
     </body>
 </html>

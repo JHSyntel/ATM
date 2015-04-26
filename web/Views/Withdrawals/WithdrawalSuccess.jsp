@@ -14,7 +14,7 @@
     <body>
         <h1>Success</h1>
         <div>
-            Your withdrawal is successful.<br>
+            Your withdrawal completed successfully.<br>
             Would you like to perform another transaction?<br>
             Yes(main menu)/No(quit)
         </div>

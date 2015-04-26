@@ -15,8 +15,10 @@
     <body>
         <h1>Select Deposit Type</h1>
         <div>
-            <a href="InsertCash.jsp"><s:submit value="Cash"/></a>
-            <a href="InsertCheck.jsp"><s:submit value="Check"/></a>
+            <form method="link">
+                <input type="submit" value="Cash" formaction="InsertCash.jsp"/>
+                <input type="submit" value="Check" formaction="InsertCheck.jsp"/>
+            </form>
         </div>
     </body>
 </html>

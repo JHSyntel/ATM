@@ -13,13 +13,12 @@
         <title>Bank of Kyle ATM</title>
     </head>
     <body>
-        <h1>Please Insert Your Cash Deposit On Your Right</h1>
+        <h1>Please Insert Your Cash Deposit On Your Left</h1>
         <div>
             <s:form action="ScanCash" >
-                <s:submit value="img"/>
-                Picture/button of deposit acceptance slot.<br>
+                <input type="image" src="depositslot.jpeg" alt="Submit"/><br>
+                (Until deposit reader is installed, enter amount deposited here, then click the above image.)<br>
                 <s:textfield name="depositcashamt"/>
-                (Until deposit reader is installed, enter amount deposited here, then click the above image.)
             </s:form>
         </div>
     </body>

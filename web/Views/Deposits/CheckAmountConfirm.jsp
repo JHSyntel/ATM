@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,7 +16,11 @@
         <h1>Confirm the Amount on Your Check</h1>
         <div>
             Picture of check.<br>
-            Yes/No
+            <s:property value="depositcheckamt"/>
+            <s:form action="Deposit">
+                <s:submit value="Yes"/>
+            </s:form>
+            <a href="WrongAmount.jsp"><s:submit value="No"/></a>
         </div>
     </body>
 </html>

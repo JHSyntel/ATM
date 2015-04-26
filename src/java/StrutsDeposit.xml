@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <constant name="struts.devMode" value="true" />
+    <package name="depositpkg" extends="struts-default">
+        
+        <action name="Deposit" 
+              class="depositpkg.DepositAct" 
+              method="execute">
+            
+            <interceptor-ref name="params"/>
+            <interceptor-ref name="validation"/>
+            <interceptor-ref name="workflow"/>
+            <result name="input">/Views/Deposits/SelectDepositType.jsp</result>
+            <result name="success">/Views/Deposits/DepositSuccess.jsp</result>
+        </action>
+        
+        <action name="ScanCheck" 
+              class="depositpkg.ScanCheckAct" 
+              method="execute">
+            
+            <interceptor-ref name="params"/>
+            <interceptor-ref name="validation"/>
+            <interceptor-ref name="workflow"/>
+            <result name="input">/Views/Deposits/InsertCheck.jsp</result>
+            <result name="success">/Views/Deposits/CheckAmountConfirm.jsp</result>
+        </action>
+        
+        <action name="ScanCash" 
+              class="depositpkg.ScanCashAct" 
+              method="execute">
+            
+            <interceptor-ref name="params"/>
+            <interceptor-ref name="validation"/>
+            <interceptor-ref name="workflow"/>
+            <result name="input">/Views/Deposits/InsertCash.jsp</result>
+            <result name="success">/Views/Deposits/CashAmountConfirm.jsp</result>
+        </action>
+    </package>
+</struts>

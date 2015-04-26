@@ -3,6 +3,7 @@
 "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
+    <constant name="struts.ui.theme" value="simple" />
     <include file="StrutsWithdraw.xml"/>
     <include file="StrutsDeposit.xml"/>
     <!-- Configuration for the default package. -->

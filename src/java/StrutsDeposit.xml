@@ -7,7 +7,7 @@
     <package name="depositpkg" extends="struts-default">
         
         <action name="Deposit" 
-              class="depositpkg.DepositAct" 
+              class="com.syntelinc.BOK.ATM.depositpkg.DepositAct" 
               method="execute">
             
             <interceptor-ref name="params"/>
@@ -18,7 +18,7 @@
         </action>
         
         <action name="ScanCheck" 
-              class="depositpkg.ScanCheckAct" 
+              class="com.syntelinc.BOK.ATM.depositpkg.ScanCheckAct" 
               method="execute">
             
             <interceptor-ref name="params"/>
@@ -29,7 +29,7 @@
         </action>
         
         <action name="ScanCash" 
-              class="depositpkg.ScanCashAct" 
+              class="com.syntelinc.BOK.ATM.depositpkg.ScanCashAct" 
               method="execute">
             
             <interceptor-ref name="params"/>

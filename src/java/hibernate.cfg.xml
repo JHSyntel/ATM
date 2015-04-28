@@ -7,6 +7,7 @@
     <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:XE</property>
     <property name="hibernate.connection.username">system</property>
     <property name="hibernate.connection.password">syntel123$</property>
+    <!--<property name="hibernate.hbm2ddl.auto">create</property>-->
     <mapping resource="SavingsTransaction.xml"/>
     <mapping resource="CheckingTransaction.xml"/>
   </session-factory>

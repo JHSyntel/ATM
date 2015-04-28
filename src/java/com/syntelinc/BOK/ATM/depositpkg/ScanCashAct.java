@@ -6,14 +6,21 @@
 
 package com.syntelinc.BOK.ATM.depositpkg;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import java.util.Map;
+import javax.servlet.http.HttpSession;
+import org.apache.struts2.ServletActionContext;
+import org.apache.struts2.dispatcher.SessionMap;
+import org.apache.struts2.interceptor.SessionAware;
 
 /**
  *
  * @author EH5024424
  */
-public class ScanCashAct extends ActionSupport
+public class ScanCashAct extends ActionSupport implements SessionAware
 {
+    private SessionMap<String, Object> sessionMap;
     private int depositcashamt;
     
     public ScanCashAct()
@@ -30,6 +37,15 @@ public class ScanCashAct extends ActionSupport
     @Override
     public String execute()
     {
+        sessionMap = (SessionMap)ActionContext.getContext().getSession();
+        //TEST CODE - REMOVE AFTER INTEGRATION WITH ACCOUNT SELECTION
+        sessionMap.put("accounttype", "checking");
+        sessionMap.put("accountid", "22");
+        
+        sessionMap.put("depositamt", Double.toString(depositcashamt));
+        sessionMap.put("withdrawamt", Integer.toString(0));
+        sessionMap.put("deposittype", "cash");
+        
         return SUCCESS;
     }
 
@@ -45,6 +61,11 @@ public class ScanCashAct extends ActionSupport
      */
     public void setDepositcashamt(int depositcashamt) {
         this.depositcashamt = depositcashamt;
+    }
+
+    @Override
+    public void setSession(Map<String, Object> map) {
+        sessionMap = (SessionMap)map;
     }
     
 }

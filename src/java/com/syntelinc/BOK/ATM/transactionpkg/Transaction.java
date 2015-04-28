@@ -14,11 +14,14 @@ import java.util.Date;
  */
 public class Transaction
 {
+    private int transid;
     private int acctid;
     private Date time;
     private String location;
     private Double balance;
-    private Double debitnumber;
+    private Double debitamt;
+    private Double creditamt;
+    private int type;
     
     public Transaction()
     {
@@ -82,16 +85,58 @@ public class Transaction
     }
 
     /**
-     * @return the debitnumber
+     * @return the debitamt
      */
-    public Double getDebitnumber() {
-        return debitnumber;
+    public Double getDebitamt() {
+        return debitamt;
     }
 
     /**
-     * @param debitnumber the debitnumber to set
+     * @param debitamt the debitamt to set
      */
-    public void setDebitnumber(Double debitnumber) {
-        this.debitnumber = debitnumber;
+    public void setDebitamt(Double debitamt) {
+        this.debitamt = debitamt;
+    }
+
+    /**
+     * @return the creditamt
+     */
+    public Double getCreditamt() {
+        return creditamt;
+    }
+
+    /**
+     * @param creditamt the creditamt to set
+     */
+    public void setCreditamt(Double creditamt) {
+        this.creditamt = creditamt;
+    }
+
+    /**
+     * @return the type
+     */
+    public int getType() {
+        return type;
+    }
+
+    /**
+     * @param type the type to set
+     */
+    public void setType(int type) {
+        this.type = type;
+    }
+
+    /**
+     * @return the tranid
+     */
+    public int getTransid() {
+        return transid;
+    }
+
+    /**
+     * @param tranid the tranid to set
+     */
+    public void setTransid(int transid) {
+        this.transid = transid;
     }
 }

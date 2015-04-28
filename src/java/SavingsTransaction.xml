@@ -2,13 +2,15 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
   <class name="com.syntelinc.BOK.ATM.transactionpkg.SavingsTransaction" table="savingTrans">
-    <id name="transID" type="integer">
+    <id name="transid" type="integer">
       <generator class="increment"/>
     </id>
     <property name="acctid"/>
     <property name="time"/>
     <property name="location"/>
     <property name="balance"/>
-    <property name="debitnumber"/>
+    <property name="debitamt"/>
+    <property name="creditamt"/>
+    <property name="type"/>
   </class>
 </hibernate-mapping>

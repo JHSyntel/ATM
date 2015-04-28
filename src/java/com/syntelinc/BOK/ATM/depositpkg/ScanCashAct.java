@@ -44,7 +44,7 @@ public class ScanCashAct extends ActionSupport implements SessionAware
         
         sessionMap.put("depositamt", Double.toString(depositcashamt));
         sessionMap.put("withdrawamt", Integer.toString(0));
-        sessionMap.put("deposittype", "cash");
+        sessionMap.put("type", "cash");
         
         return SUCCESS;
     }

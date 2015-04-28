@@ -42,7 +42,7 @@ public class ScanCheckAct extends ActionSupport implements SessionAware
         
         sessionMap.put("depositamt", Double.toString(depositcheckamt));
         sessionMap.put("withdrawamt", Integer.toString(0));
-        sessionMap.put("deposittype", "check");
+        sessionMap.put("type", "check");
         
         return SUCCESS;
     }

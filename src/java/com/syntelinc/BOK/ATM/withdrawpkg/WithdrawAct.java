@@ -6,15 +6,21 @@
 
 package com.syntelinc.BOK.ATM.withdrawpkg;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import com.syntelinc.BOK.ATM.transactionpkg.HibernateTransaction;
+import java.util.Map;
+import org.apache.struts2.dispatcher.SessionMap;
+import org.apache.struts2.interceptor.SessionAware;
 
 /**
  *
  * @author EH5024424
  */
-public class WithdrawAct extends ActionSupport
+public class WithdrawAct extends ActionSupport implements SessionAware
 {
     private int withdrawamt;
+    private SessionMap<String, Object> sessionMap;
     
     public WithdrawAct()
     {
@@ -31,10 +37,23 @@ public class WithdrawAct extends ActionSupport
     @Override
     public String execute()
     {
-        //create transaction
-        //send transaction to database
-        //transaction needs time, account id, location, new balance, debit number, credit? number
-        return SUCCESS;
+        try
+        {
+            sessionMap = (SessionMap)ActionContext.getContext().getSession();
+            //TEST CODE - REMOVE AFTER INTEGRATION WITH ACCOUNT SELECTION
+            sessionMap.put("accounttype", "checking");
+            sessionMap.put("accountid", "22");
+
+            sessionMap.put("depositamt", Integer.toString(0));
+            sessionMap.put("withdrawamt", Double.toString(withdrawamt));
+            sessionMap.put("type", "cash");
+            new HibernateTransaction();
+            return SUCCESS;
+        }
+        catch(IllegalArgumentException e)
+        {
+            return ERROR;
+        }
     }
 
     /**
@@ -49,5 +68,10 @@ public class WithdrawAct extends ActionSupport
      */
     public void setWithdrawamt(int withdrawamt) {
         this.withdrawamt = withdrawamt;
+    }
+
+    @Override
+    public void setSession(Map<String, Object> map) {
+        sessionMap = (SessionMap)map;
     }
 }

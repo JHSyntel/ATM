@@ -74,7 +74,7 @@ public class HibernateTransaction implements SessionAware
         tran.setBalance(bal.doubleValue() + tran.getDebitamt() - tran.getCreditamt());
         tran.setBalance(Double.parseDouble(df.format(tran.getBalance())));
         
-        switch((String)sessionMap.get("deposittype"))
+        switch((String)sessionMap.get("type"))
         {
             case "cash":
                 tran.setType(1);

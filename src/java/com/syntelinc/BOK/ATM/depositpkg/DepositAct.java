@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package depositpkg;
+package com.syntelinc.BOK.ATM.depositpkg;
 
 import com.opensymphony.xwork2.ActionSupport;
 

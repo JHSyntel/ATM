@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package depositpkg;
+package com.syntelinc.BOK.ATM.depositpkg;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -12,11 +12,11 @@ import com.opensymphony.xwork2.ActionSupport;
  *
  * @author EH5024424
  */
-public class ScanCheckAct extends ActionSupport
+public class ScanCashAct extends ActionSupport
 {
-    private float depositcheckamt;
+    private int depositcashamt;
     
-    public ScanCheckAct()
+    public ScanCashAct()
     {
         
     }
@@ -34,16 +34,17 @@ public class ScanCheckAct extends ActionSupport
     }
 
     /**
-     * @return the depositcheckamt
+     * @return the depositcashamt
      */
-    public float getDepositcheckamt() {
-        return depositcheckamt;
+    public int getDepositcashamt() {
+        return depositcashamt;
     }
 
     /**
-     * @param depositcheckamt the depositcheckamt to set
+     * @param depositcashamt the depositcashamt to set
      */
-    public void setDepositcheckamt(float depositcheckamt) {
-        this.depositcheckamt = depositcheckamt;
+    public void setDepositcashamt(int depositcashamt) {
+        this.depositcashamt = depositcashamt;
     }
+    
 }

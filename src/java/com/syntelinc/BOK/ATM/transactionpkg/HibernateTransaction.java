@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package transactionpkg;
+package com.syntelinc.BOK.ATM.transactionpkg;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.util.ValueStack;

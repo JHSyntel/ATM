@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package transactionpkg;
+package com.syntelinc.BOK.ATM.transactionpkg;
 
 import java.util.Date;
 

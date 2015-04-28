@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package withdrawpkg;
+package com.syntelinc.BOK.ATM.withdrawpkg;
 
 import com.opensymphony.xwork2.ActionSupport;
 

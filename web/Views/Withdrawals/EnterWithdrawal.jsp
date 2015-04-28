@@ -25,7 +25,7 @@
             }
 
             function emptyCode(){
-                    document.forms[0].code.value = "0";
+                    document.forms[0].withdrawamt.value = "0";
             }
             </script>
 

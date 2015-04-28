@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <constant name="struts.devMode" value="true" />
+    <package name="in.syntel.BOK.ATM" extends="struts-default">
+        
+        <action name="EnterPin" 
+              class="in.syntel.BOK.ATM.EnterPinNum" 
+              method="execute">
+            
+            <interceptor-ref name="params"/>
+            <interceptor-ref name="validation"/>
+            <interceptor-ref name="workflow"/>
+            <result name="success">/Views/Auth/temp.html</result>
+        </action>
+    </package>
+</struts>

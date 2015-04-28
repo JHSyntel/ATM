@@ -29,9 +29,6 @@ public class DepositAct extends ActionSupport
     @Override
     public String execute()
     {
-        System.out.println("depositing");
-        ScanCashAct obj = new ScanCashAct();
-        System.out.println(obj.getDepositcashamt());
         return SUCCESS;
     }
 }

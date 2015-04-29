@@ -15,6 +15,7 @@
             <interceptor-ref name="workflow"/>
             <result name="input">/Views/Withdrawals/EnterWithdrawal.jsp</result>
             <result name="success">/Views/Withdrawals/RetrieveCash.jsp</result>
+            <result name="error">/Views/Error.jsp</result>
         </action>
     </package>
 </struts>

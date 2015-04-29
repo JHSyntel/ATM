@@ -40,7 +40,7 @@
             </s:if>
 
             <s:form action="withdraw">
-                <s:textfield name="withdrawamt" size="10"/>
+                <s:textfield name="withdrawamt" size="10" readonly="true"/>
             </s:form>
             
             <table id="keypad" cellpadding="5" cellspacing="3">

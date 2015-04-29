@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,7 +16,7 @@
         <h1>Retrieve Your Withdrawal</h1>
         <div>
             <a href="WithdrawalSuccess.jsp"><img src="cashslot.jpeg" alt="Submit"/></a><br>
-            (Press the image to simulate retrieving your withdrawal.)
+            (Press the image to simulate retrieving your withdrawal of <s:property value="getText('{0,number,currency}', {withdrawamt})"/>.)
         </div>
     </body>
 </html>

@@ -4,16 +4,15 @@
  * and open the template in the editor.
  */
 
-package transactionpkg;
+package com.syntelinc.BOK.ATM.transactionpkg;
 
 /**
  *
  * @author EH5024424
  */
-public class Transaction
+public class CheckingTransaction extends Transaction
 {
-    
-    public Transaction()
+    public CheckingTransaction()
     {
         
     }

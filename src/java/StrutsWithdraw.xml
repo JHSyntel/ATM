@@ -7,7 +7,7 @@
     <package name="withdrawpkg" extends="struts-default">
         
         <action name="withdraw" 
-              class="withdrawpkg.WithdrawAct" 
+              class="com.syntelinc.BOK.ATM.withdrawpkg.WithdrawAct" 
               method="execute">
             
             <interceptor-ref name="params"/>

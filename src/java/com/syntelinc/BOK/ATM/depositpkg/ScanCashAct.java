@@ -32,7 +32,7 @@ public class ScanCashAct extends ActionSupport implements SessionAware
     public void validate()
     {
         if (depositcashamt <= 0)
-            addActionError("Amount must be greater than zero.");
+            addActionError("Amount must be numerical value greater than zero.");
     }
     
     @Override

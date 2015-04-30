@@ -15,6 +15,7 @@
             <interceptor-ref name="workflow"/>
             <result name="input">/Views/Deposits/SelectDepositType.jsp</result>
             <result name="success">/Views/Deposits/DepositSuccess.jsp</result>
+            <result name="error">/Views/Error.jsp</result>
         </action>
         
         <action name="ScanCheck" 
@@ -26,6 +27,7 @@
             <interceptor-ref name="workflow"/>
             <result name="input">/Views/Deposits/InsertCheck.jsp</result>
             <result name="success">/Views/Deposits/CheckAmountConfirm.jsp</result>
+            <result name="error">/Views/Error.jsp</result>
         </action>
         
         <action name="ScanCash" 
@@ -37,6 +39,7 @@
             <interceptor-ref name="workflow"/>
             <result name="input">/Views/Deposits/InsertCash.jsp</result>
             <result name="success">/Views/Deposits/CashAmountConfirm.jsp</result>
+            <result name="error">/Views/Error.jsp</result>
         </action>
     </package>
 </struts>

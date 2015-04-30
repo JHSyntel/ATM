@@ -8,6 +8,7 @@
 <%@page import="com.opensymphony.xwork2.ActionContext"%>
 <%@page import="org.apache.struts2.dispatcher.SessionMap"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html>
     <head>

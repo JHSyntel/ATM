@@ -8,6 +8,7 @@
     <property name="hibernate.connection.username">system</property>
     <property name="hibernate.connection.password">syntel123$</property>
     <!--<property name="hibernate.hbm2ddl.auto">create</property>-->
+    <property name="hibernate.show_sql">true</property>
     <mapping resource="SavingsTransaction.xml"/>
     <mapping resource="CheckingTransaction.xml"/>
   </session-factory>

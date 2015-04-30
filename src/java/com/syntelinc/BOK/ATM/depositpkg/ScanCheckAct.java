@@ -29,7 +29,8 @@ public class ScanCheckAct extends ActionSupport implements SessionAware
     @Override
     public void validate()
     {
-        
+        if (depositcheckamt <= 0)
+            addActionError("Amount must be numerical value greater than zero.");
     }
     
     @Override

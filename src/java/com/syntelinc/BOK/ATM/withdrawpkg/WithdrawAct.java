@@ -36,7 +36,7 @@ public class WithdrawAct extends ActionSupport implements SessionAware
             addActionError("Amount must be divisible by twenty.");
         
         CheckDailyLimit todayTrans = new CheckDailyLimit();
-        double amt = todayTrans.getCurrentTotal();
+        double amt = todayTrans.getCurrentTotal((int)sessionMap.get("accountid"));
         if (amt >= 1000)
             addActionError("You have already reached your daily withdrawal limit of $1000.");
         else if (amt+withdrawamt > 1000)

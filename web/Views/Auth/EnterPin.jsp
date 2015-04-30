@@ -13,9 +13,13 @@
         <title>Bank of Kyle ATM</title>
     </head>
     <body>
+        <h1>Please enter your pin number:</h1>
         <s:form action="EnterPin">
+            <s:if test="hasActionErrors()">
+                <s:actionerror/>
+            </s:if>
             <s:label>Pin #</s:label>
-            <s:textfield name="pinNum"/>
+            <s:textfield name="pinNumber"/>
             <s:submit>Submit</s:submit>
         </s:form>
     </body>

@@ -14,15 +14,21 @@
     </head>
     <body>
         <h1>Please swipe (input card number) your card.</h1>
-        <S:form action="ChangePin">
+        <s:form action="ChangePin">
+            <s:if test="hasActionErrors()">
+                <s:actionerror/>
+            </s:if>
             <s:label>Confirm Current Pin #</s:label>
-            <s:textfield name="currentPin"/>
+            <s:textfield name="currentPinNumber"/>
+            <br>
             <s:label>New Pin #</s:label>
-            <s:textfield name="newPin"/>
+            <s:textfield name="newPinNumber"/>
+            <br>
             <s:label>Confirm New Pin #</s:label>
-            <s:textfield name="newPinDupe"/>
-            <s:submit name="submit">Submit</s:submit>
-            <s:submit name="cancel">Cancel</s:submit>
-        </S:form>
+            <s:textfield name="confirmNewPinNumber"/>
+            <br>
+            <s:submit value="Change Pin" name="submit" formaction="ChangePin"/>
+            <s:submit value="Cancel" name="cancel"/>
+        </s:form>
     </body>
 </html>

@@ -13,14 +13,14 @@
         <title>Bank of Kyle ATM</title>
     </head>
     <body>
-        <h1>Please swipe your card (input number).</h1>
-        <S:form action="SwipeCard">
+        <h1>Please swipe your card (input number):</h1>
+        <s:form action="SwipeCard">
             <s:if test="hasActionErrors()">
                 <s:actionerror/>
             </s:if>
             <s:label>Card Number</s:label>
             <s:textfield name="cardNumber"/>
             <s:submit value="Swipe Card"/>
-        </S:form>
+        </s:form>
     </body>
 </html>

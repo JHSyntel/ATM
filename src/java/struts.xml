@@ -6,18 +6,8 @@
     <constant name="struts.ui.theme" value="simple" />
     <include file="StrutsWithdraw.xml"/>
     <include file="StrutsDeposit.xml"/>
-    <include file="StrutsSelectAccount.xml"/>
     <include file="StrutsMainMenu.xml"/>
     <!-- Configuration for the default package. -->
     <package name="default" extends="struts-default">
-        <interceptors>
-        <interceptor-stack name="appDefault">
-             <interceptor-ref name="defaultStack">
-                <param name="exception.logEnabled">true</param>
-                <param name="exception.logLevel">ERROR</param>
-                <param name="params.excludeParams">dojo\..*,^struts\..*,^session\..*,^request\..*,^application\..*,^servlet(Request|Response)\..*,parameters\...*</param>
-            </interceptor-ref>
-        </interceptor-stack>
-    </interceptors>
     </package>
 </struts>

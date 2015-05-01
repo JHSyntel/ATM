@@ -12,7 +12,7 @@
             Please select an option.<br><br>
             <form method="link">
                 <input type="submit" value="Return to Main Menu" formaction="/ATM/Views/MainMenu.jsp"/>
-                <input type="submit" value="Try Again" formaction="quit"/>
+                <input type="submit" value="Quit" formaction="ATM/Views/Landing.jsp"/>
             </form>
         </div>
     </body>

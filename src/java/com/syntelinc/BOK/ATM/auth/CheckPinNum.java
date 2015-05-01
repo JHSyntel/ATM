@@ -12,6 +12,6 @@ import com.opensymphony.xwork2.ActionSupport;
  *
  * @author JH5024430
  */
-public class CheckPinNum extends ActionSupport{
+public class CheckPinNum extends ActionSupport {
     
 }

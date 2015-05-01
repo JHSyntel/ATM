@@ -12,4 +12,18 @@
     <!-- Configuration for the default package. -->
     <package name="default" extends="struts-default">
     </package>
+    <package name="com.syntelinc.BOK.ATM" extends="struts-default">
+            <interceptors>
+            <interceptor name="authentication"
+                class="com.syntelinc.BOK.ATM.auth.AuthenticationInterceptor"></interceptor>
+            <interceptor-stack name="authStack">
+                <interceptor-ref name="authentication"></interceptor-ref>
+                <interceptor-ref name="defaultStack"></interceptor-ref>
+            </interceptor-stack>
+        </interceptors>
+        <default-interceptor-ref name="authStack"></default-interceptor-ref>
+        <global-results>
+            <result name="landing" type="redirect">/Views/Landing.jsp</result>
+        </global-results>
+    </package>
 </struts>

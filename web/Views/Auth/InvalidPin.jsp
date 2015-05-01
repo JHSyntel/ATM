@@ -11,8 +11,8 @@
         <div>
             Please try again or see a teller for assistance.<br><br>
             <form method="link">
-                <input type="submit" value="Try Again" formaction="EnterPin.jsp"/>
-                <input type="submit" value="Quit"/>
+                <input type="submit" value="Try Again" formaction="EnterPin"/>
+                <input type="submit" value="Quit" formaction="ATM/Views/Landing.jsp"/>
             </form>
         </div>
     </body>

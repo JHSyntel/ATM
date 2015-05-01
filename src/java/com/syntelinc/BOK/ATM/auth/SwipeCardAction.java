@@ -6,14 +6,29 @@
 
 package com.syntelinc.BOK.ATM.auth;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.interceptor.ParameterNameAware;
+import java.util.Map;
+import org.apache.struts2.interceptor.SessionAware;
 
 /**
  *
  * @author JH5024430
  */
-public class SwipeCardAction extends ActionSupport{
+public class SwipeCardAction extends ActionSupport implements SessionAware {
     private int cardNumber;
+    
+    private Map<String, Object> userSession;
+
+    @Override
+    public void setSession(Map<String, Object> map) {
+        userSession = map;
+    }
+    
+    private Map<String, Object> getSession() {
+        return userSession = ActionContext.getContext().getSession();
+    }
     
     public SwipeCardAction()
     {
@@ -23,16 +38,17 @@ public class SwipeCardAction extends ActionSupport{
     @Override
     public void validate()
     {
-        
-        System.out.println("------validate()----------------------cardNumber is " + cardNumber);
+        userSession = getSession();
+        if(!Authentication.validID(cardNumber))
+            addActionError("User not valid");
         if(!"55555".equals(Integer.toString(cardNumber)))
-            addActionError("Card not valid.");
+            addActionError("Invalid card number format");
     }
     
     @Override
     public String execute()
     {
-        System.out.println("-----execute()-----------------------cardNumber is " + cardNumber);
+        userSession.put("authenticated", true);
         return SUCCESS;
     }
 

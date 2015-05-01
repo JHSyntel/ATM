@@ -6,16 +6,30 @@
 
 package com.syntelinc.BOK.ATM.auth;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import java.util.Map;
+import org.apache.struts2.interceptor.SessionAware;
 
 /**
  *
  * @author JH5024430
  */
-public class ChangePinNum extends ActionSupport{
+public class ChangePinNum extends ActionSupport implements SessionAware{
     private int newPinNumber;
     private int confirmNewPinNumber;
     private int currentPinNumber;
+    
+    private Map<String, Object> userSession;
+
+    @Override
+    public void setSession(Map<String, Object> map) {
+        userSession = map;
+    }
+    
+    private Map<String, Object> getSession() {
+        return userSession = ActionContext.getContext().getSession();
+    }
     
     public ChangePinNum()
     {
@@ -24,25 +38,32 @@ public class ChangePinNum extends ActionSupport{
     
     @Override
     public void validate()
-    {
-        
-        System.out.println("------validate()----------------------pinNumber is ");
-        if(!"55555".equals(Integer.toString(currentPinNumber)))
+    {    
+        userSession = getSession();
+        try {
+            if(!Authentication.sessionActive((boolean) userSession.get("authenticated")))
+                userSession.put("authenticated", false);
+        } catch (NullPointerException e) {
+            System.out.println("Null detected, redirect");
+            userSession.put("authenticated", false);
+            this.execute();
+        }
+        if(Authentication.pinIsCorrect(currentPinNumber))
             addActionError("Pin not valid.");
-        System.out.println("------validate()----------------------pinFieldsAreEqual() returns " + pinFieldsAreEqual());
-        System.out.println("------validate()----------------------newPinNumber is " + newPinNumber);
-        System.out.println("------validate()----------------------confirmNewPinNumber is " + confirmNewPinNumber);
-        if(!pinFieldsAreEqual())
+        if(!Authentication.pinFieldsAreEqual(newPinNumber, confirmNewPinNumber))
             addActionError("Pin fields are not equal.");
-    }
-    
-    public boolean pinFieldsAreEqual() {
-        return newPinNumber == confirmNewPinNumber;
+        if(!Authentication.validPin(newPinNumber))
+            addActionError("New pin must be numeric and 5 digits long");
     }
     
     @Override
     public String execute()
     {
+        System.out.println(!(boolean)userSession.get("authenticated"));
+        if(!(boolean)userSession.get("authenticated")) {
+            System.out.println("REDIRECTED");
+            return "NOTAUTHED";
+        }
         System.out.println("-----execute()-----------------------pinNumber is ");
         return SUCCESS;
     }

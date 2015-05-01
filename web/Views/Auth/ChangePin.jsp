@@ -14,7 +14,7 @@
     </head>
     <body>
         <h1>Please swipe (input card number) your card.</h1>
-        <s:form action="ChangePin">
+        <s:form>
             <s:if test="hasActionErrors()">
                 <s:actionerror/>
             </s:if>
@@ -27,8 +27,8 @@
             <s:label>Confirm New Pin #</s:label>
             <s:textfield name="confirmNewPinNumber"/>
             <br>
-            <s:submit value="Change Pin" name="submit" formaction="ChangePin"/>
-            <s:submit value="Cancel" name="cancel"/>
+            <s:submit value="Change Pin" formaction="ChangePin"/>
+            <s:submit value="Cancel" formaction="/ATM/Views/MainMenu.jsp"/>
         </s:form>
     </body>
 </html>

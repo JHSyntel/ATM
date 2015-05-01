@@ -6,14 +6,28 @@
 
 package com.syntelinc.BOK.ATM.auth;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import java.util.Map;
+import org.apache.struts2.interceptor.SessionAware;
 
 /**
  *
  * @author JH5024430
  */
-public class EnterPinNum extends ActionSupport{
+public class EnterPinNum extends ActionSupport implements SessionAware{
     private int pinNumber;
+    
+    private Map<String, Object> userSession;
+
+    @Override
+    public void setSession(Map<String, Object> map) {
+        userSession = map;
+    }
+    
+    private Map<String, Object> getSession() {
+        return userSession = ActionContext.getContext().getSession();
+    }
     
     public EnterPinNum()
     {
@@ -23,10 +37,15 @@ public class EnterPinNum extends ActionSupport{
     @Override
     public void validate()
     {
-        
-        System.out.println("------validate()----------------------pinNumber is " + pinNumber);
+        userSession = getSession();
+        if(!Authentication.sessionActive((boolean) userSession.get("authenticated")))
+            redirectToLanding();
         if(!"55555".equals(Integer.toString(pinNumber)))
             addActionError("Card not valid.");
+    }
+    
+    public String redirectToLanding() {
+       return "NOTAUTHED";
     }
     
     @Override

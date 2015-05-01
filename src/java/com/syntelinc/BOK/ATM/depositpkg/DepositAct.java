@@ -4,9 +4,10 @@
  * and open the template in the editor.
  */
 
-package depositpkg;
+package com.syntelinc.BOK.ATM.depositpkg;
 
 import com.opensymphony.xwork2.ActionSupport;
+import com.syntelinc.BOK.ATM.transactionpkg.HibernateTransaction;
 
 /**
  *
@@ -29,9 +30,14 @@ public class DepositAct extends ActionSupport
     @Override
     public String execute()
     {
-        System.out.println("depositing");
-        ScanCashAct obj = new ScanCashAct();
-        System.out.println(obj.getDepositcashamt());
-        return SUCCESS;
+        try
+        {
+            new HibernateTransaction();
+            return SUCCESS;
+        }
+        catch(IllegalArgumentException e)
+        {
+            return ERROR;
+        }
     }
 }

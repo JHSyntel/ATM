@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <constant name="struts.devMode" value="true" />
+    <package name="menupkg" extends="struts-default">
+        
+        <action name="menuOptionSelected" 
+              class="com.syntelinc.BOK.ATM.menupkg.MainMenuAct" 
+              method="execute">
+            
+            <interceptor-ref name="params"/>
+            <interceptor-ref name="validation"/>
+            <interceptor-ref name="workflow"/>
+            <result name="chooseAccount">/Views/SelectAccount.jsp</result>
+            <result name="pinChange">/Views/ViewSummary.jsp</result>
+            <result name="logout">/Views/SplashScreen.jsp</result>
+            <result name="error">/Views/SplashScreen.jsp</result>
+        </action>
+        
+        <action name="DepositSelected" 
+              class="com.syntelinc.BOK.ATM.menupkg.DepositSelectedAction" 
+              method="execute">
+            
+            <interceptor-ref name="params"/>
+            <interceptor-ref name="validation"/>
+            <interceptor-ref name="workflow"/>
+            <result name="success">/Views/SelectAccount.jsp</result>
+            <result name="error">/Views/SplashScreen.jsp</result>
+        </action>
+        
+        <action name="WithdrawSelected" 
+              class="com.syntelinc.BOK.ATM.menupkg.WithdrawSelectedAction" 
+              method="execute">
+            
+            <interceptor-ref name="params"/>
+            <interceptor-ref name="validation"/>
+            <interceptor-ref name="workflow"/>
+            <result name="success">/Views/SelectAccount.jsp</result>
+            <result name="error">/Views/SplashScreen.jsp</result>
+        </action>
+        
+        <action name="StatementSelected" 
+              class="com.syntelinc.BOK.ATM.menupkg.StatementSelectedAction" 
+              method="execute">
+            
+            <interceptor-ref name="params"/>
+            <interceptor-ref name="validation"/>
+            <interceptor-ref name="workflow"/>
+            <result name="success">/Views/SelectAccount.jsp</result>
+            <result name="error">/Views/SplashScreen.jsp</result>
+        </action>
+        
+        <action name="SummarySelected" 
+              class="com.syntelinc.BOK.ATM.menupkg.SummarySelectedAction" 
+              method="execute">
+            
+            <interceptor-ref name="params"/>
+            <interceptor-ref name="validation"/>
+            <interceptor-ref name="workflow"/>
+            <result name="success">/Views/SelectAccount.jsp</result>
+            <result name="error">/Views/SplashScreen.jsp</result>
+        </action>
+        
+        <action name="PinChangeSelected" 
+              class="com.syntelinc.BOK.ATM.menupkg.PinChangeSelectedAction" 
+              method="execute">
+            
+            <interceptor-ref name="params"/>
+            <interceptor-ref name="validation"/>
+            <interceptor-ref name="workflow"/>
+            <result name="success">/Views/ChangePin.jsp</result>
+            <result name="error">/Views/SplashScreen.jsp</result>
+        </action>
+        
+        <action name="LogoutSelected" 
+              class="com.syntelinc.BOK.ATM.menupkg.LogoutSelectedAction" 
+              method="execute">
+            
+            <interceptor-ref name="params"/>
+            <interceptor-ref name="validation"/>
+            <interceptor-ref name="workflow"/>
+            <result name="success">/Views/SplashScreen.jsp</result>
+            <result name="error">/Views/SplashScreen.jsp</result>
+        </action>
+        
+        <action name="SelectAccount" 
+              class="com.syntelinc.BOK.ATM.menupkg.SelectAccountAction" 
+              method="execute">
+            <param name="selectedAccountID"/>
+            <interceptor-ref name="params"/>
+            <interceptor-ref name="validation"/>
+            <interceptor-ref name="workflow"/>
+            <result name="withdraw">/Views/Withdrawals/EnterWithdrawal.jsp</result>
+            <result name="deposit">/Views/Deposits/SelectDepositType.jsp</result>
+            <result name="viewSummary">/Views/ViewSummary.jsp</result>
+            <result name="printStatement">/Views/PrintStatement.jsp</result>
+            <result name="noMenuSelection">/Views/SplashScreen.jsp</result>
+            <result name="cancel">/Views/MainMenu.jsp</result>
+            <result name="error">/Views/MainMenu.jsp</result>
+        </action>
+        
+    </package>
+</struts>

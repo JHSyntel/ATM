@@ -4,12 +4,10 @@
  * and open the template in the editor.
  */
 
-package in.syntel.BOK.ATM;
-
 /**
  *
- * @author JH5024430
+ * @author KB5024427
  */
-public class Authentication {
-    
+public class SavingsAccount {
+
 }

@@ -7,16 +7,19 @@
     <package name="depositpkg" extends="struts-default">
         
         <action name="Deposit" 
-              class="depositpkg.DepositAct" 
+              class="com.syntelinc.BOK.ATM.depositpkg.DepositAct" 
               method="execute">
             
             <interceptor-ref name="params"/>
             <interceptor-ref name="validation"/>
             <interceptor-ref name="workflow"/>
+            <result name="input">/Views/Deposits/SelectDepositType.jsp</result>
+            <result name="success">/Views/Deposits/DepositSuccess.jsp</result>
+            <result name="error">/Views/Error.jsp</result>
         </action>
         
         <action name="ScanCheck" 
-              class="depositpkg.ScanCheckAct" 
+              class="com.syntelinc.BOK.ATM.depositpkg.ScanCheckAct" 
               method="execute">
             
             <interceptor-ref name="params"/>
@@ -24,10 +27,11 @@
             <interceptor-ref name="workflow"/>
             <result name="input">/Views/Deposits/InsertCheck.jsp</result>
             <result name="success">/Views/Deposits/CheckAmountConfirm.jsp</result>
+            <result name="error">/Views/Error.jsp</result>
         </action>
         
         <action name="ScanCash" 
-              class="depositpkg.ScanCashAct" 
+              class="com.syntelinc.BOK.ATM.depositpkg.ScanCashAct" 
               method="execute">
             
             <interceptor-ref name="params"/>
@@ -35,6 +39,7 @@
             <interceptor-ref name="workflow"/>
             <result name="input">/Views/Deposits/InsertCash.jsp</result>
             <result name="success">/Views/Deposits/CashAmountConfirm.jsp</result>
+            <result name="error">/Views/Error.jsp</result>
         </action>
     </package>
 </struts>

@@ -15,6 +15,9 @@
     <body>
         <h1>Please Insert Your Cash Deposit On Your Left</h1>
         <div>
+            <s:if test="hasActionErrors()">
+                <s:actionerror/>
+            </s:if>
             <s:form action="ScanCash" >
                 <input type="image" src="depositslot.jpeg" alt="Submit"/><br>
                 (Until deposit reader is installed, enter amount deposited here, then click the above image.)<br>

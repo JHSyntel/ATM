@@ -2,12 +2,12 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated Apr 30, 2015 10:50:57 AM by Hibernate Tools 3.6.0 -->
 <hibernate-mapping>
-  <class name="menupkg.Savingacct" schema="SYSTEM" table="SAVINGACCT">
+  <class name="com.syntelinc.BOK.ATM.menupkg.Checkingacct" schema="SYSTEM" table="CHECKINGACCT">
     <id name="accountid" type="int">
-      <column name="SAVINGID" precision="8" scale="0"/>
+      <column name="CHECKINGID" precision="8" scale="0"/>
       <generator class="assigned"/>
     </id>
-    <many-to-one class="menupkg.Userdetails" fetch="select" name="userdetails">
+    <many-to-one class="com.syntelinc.BOK.ATM.menupkg.Userdetails" fetch="select" name="userdetails">
       <column name="USERID" not-null="true" precision="5" scale="0"/>
     </many-to-one>
     <property name="createdate" type="date">

@@ -7,7 +7,7 @@
     <package name="menupkg" extends="struts-default">
         
         <action name="menuOptionSelected" 
-              class="menupkg.MainMenuAct" 
+              class="com.syntelinc.BOK.ATM.menupkg.MainMenuAct" 
               method="execute">
             
             <interceptor-ref name="params"/>
@@ -20,7 +20,7 @@
         </action>
         
         <action name="DepositSelected" 
-              class="menupkg.DepositSelectedAction" 
+              class="com.syntelinc.BOK.ATM.menupkg.DepositSelectedAction" 
               method="execute">
             
             <interceptor-ref name="params"/>
@@ -31,7 +31,7 @@
         </action>
         
         <action name="WithdrawSelected" 
-              class="menupkg.WithdrawSelectedAction" 
+              class="com.syntelinc.BOK.ATM.menupkg.WithdrawSelectedAction" 
               method="execute">
             
             <interceptor-ref name="params"/>
@@ -42,7 +42,7 @@
         </action>
         
         <action name="StatementSelected" 
-              class="menupkg.StatementSelectedAction" 
+              class="com.syntelinc.BOK.ATM.menupkg.StatementSelectedAction" 
               method="execute">
             
             <interceptor-ref name="params"/>
@@ -53,7 +53,7 @@
         </action>
         
         <action name="SummarySelected" 
-              class="menupkg.SummarySelectedAction" 
+              class="com.syntelinc.BOK.ATM.menupkg.SummarySelectedAction" 
               method="execute">
             
             <interceptor-ref name="params"/>
@@ -64,7 +64,7 @@
         </action>
         
         <action name="PinChangeSelected" 
-              class="menupkg.PinChangeSelectedAction" 
+              class="com.syntelinc.BOK.ATM.menupkg.PinChangeSelectedAction" 
               method="execute">
             
             <interceptor-ref name="params"/>
@@ -75,7 +75,7 @@
         </action>
         
         <action name="LogoutSelected" 
-              class="menupkg.LogoutSelectedAction" 
+              class="com.syntelinc.BOK.ATM.menupkg.LogoutSelectedAction" 
               method="execute">
             
             <interceptor-ref name="params"/>
@@ -86,7 +86,7 @@
         </action>
         
         <action name="SelectAccount" 
-              class="menupkg.SelectAccountAction" 
+              class="com.syntelinc.BOK.ATM.menupkg.SelectAccountAction" 
               method="execute">
             <param name="selectedAccountID"/>
             <interceptor-ref name="params"/>

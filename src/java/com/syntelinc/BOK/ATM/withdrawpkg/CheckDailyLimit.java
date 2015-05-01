@@ -26,7 +26,7 @@ public class CheckDailyLimit {
         
     }
     
-    public double getCurrentTotal()
+    public double getCurrentTotal(int accountid)
     {
         Configuration cfg = new Configuration().configure();
         SessionFactory sf = cfg.buildSessionFactory();
@@ -34,7 +34,7 @@ public class CheckDailyLimit {
         org.hibernate.Transaction t = s.beginTransaction();
         SQLQuery q;
         q = s.createSQLQuery("select creditamt from checkingtrans where acctid=? AND TIME < ? AND TIME > ?");
-        q.setInteger(0, 22);
+        q.setInteger(0, accountid);
         q.setTimestamp(1, getDayEnd());
         q.setTimestamp(2, getDayStart());
         List<BigDecimal> li = q.list();

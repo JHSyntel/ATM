@@ -8,20 +8,10 @@ package com.syntelinc.BOK.ATM.withdrawpkg;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
-import com.syntelinc.BOK.ATM.transactionpkg.CheckingTransaction;
 import com.syntelinc.BOK.ATM.transactionpkg.HibernateTransaction;
-import com.syntelinc.BOK.ATM.transactionpkg.SavingsTransaction;
-import java.math.BigDecimal;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
 import java.util.Map;
 import org.apache.struts2.dispatcher.SessionMap;
 import org.apache.struts2.interceptor.SessionAware;
-import org.hibernate.SQLQuery;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
 
 /**
  *
@@ -46,7 +36,7 @@ public class WithdrawAct extends ActionSupport implements SessionAware
             addActionError("Amount must be divisible by twenty.");
         
         CheckDailyLimit todayTrans = new CheckDailyLimit();
-        double amt = todayTrans.getCurrentTotal();
+        double amt = todayTrans.getCurrentTotal((int)sessionMap.get("accountid"));
         if (amt >= 1000)
             addActionError("You have already reached your daily withdrawal limit of $1000.");
         else if (amt+withdrawamt > 1000)
@@ -71,7 +61,6 @@ public class WithdrawAct extends ActionSupport implements SessionAware
         }
         catch(IllegalArgumentException e)
         {
-            System.out.println("Exception caught during withdrawact execute: " + e);
             return ERROR;
         }
     }

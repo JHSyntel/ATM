@@ -6,6 +6,7 @@
     <constant name="struts.ui.theme" value="simple" />
     <include file="StrutsWithdraw.xml"/>
     <include file="StrutsDeposit.xml"/>
+    <include file="StrutsMainMenu.xml"/>
     <!-- Configuration for the default package. -->
     <package name="default" extends="struts-default">
     </package>

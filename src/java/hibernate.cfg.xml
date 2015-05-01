@@ -9,11 +9,10 @@
     <property name="hibernate.connection.password">syntel123$</property>
     <!--<property name="hibernate.hbm2ddl.auto">create</property>-->
     <property name="hibernate.show_sql">true</property>
-    
     <mapping resource="SavingsTransaction.xml"/>
     <mapping resource="CheckingTransaction.xml"/>
-    <mapping resource="menupkg/Checkingacct.hbm.xml"/>
-    <mapping resource="menupkg/Savingacct.hbm.xml"/>
-    <mapping resource="menupkg/Userdetails.hbm.xml"/>
+    <mapping resource="com/syntelinc/BOK/ATM/menupkg/Checkingacct.hbm.xml"/>
+    <mapping resource="com/syntelinc/BOK/ATM/menupkg/Savingacct.hbm.xml"/>
+    <mapping resource="com/syntelinc/BOK/ATM/menupkg/Userdetails.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

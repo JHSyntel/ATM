@@ -1,4 +1,4 @@
-package menupkg;
+package com.syntelinc.BOK.ATM.menupkg;
 // Generated Apr 30, 2015 10:50:55 AM by Hibernate Tools 3.6.0
 
 

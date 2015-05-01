@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 30, 2015 10:50:57 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+  <class name="com.syntelinc.BOK.ATM.menupkg.Userdetails" schema="SYSTEM" table="USERDETAILS">
+    <id name="userid" type="int">
+      <column name="USERID" precision="5" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="pinnum" type="int">
+      <column name="PINNUM" not-null="true" precision="5" scale="0"/>
+    </property>
+    <property name="name" type="string">
+      <column length="20" name="NAME" not-null="true"/>
+    </property>
+    <property name="phone" type="string">
+      <column length="12" name="PHONE" not-null="true"/>
+    </property>
+    <property name="address" type="string">
+      <column length="50" name="ADDRESS" not-null="true"/>
+    </property>
+    <property name="email" type="string">
+      <column length="50" name="EMAIL"/>
+    </property>
+    <property name="ssn" type="string">
+      <column length="11" name="SSN" not-null="true"/>
+    </property>
+    <property name="dob" type="date">
+      <column length="7" name="DOB" not-null="true"/>
+    </property>
+    <property name="doreg" type="date">
+      <column length="7" name="DOREG" not-null="true"/>
+    </property>
+    <property name="status" type="char">
+      <column length="1" name="STATUS" not-null="true"/>
+    </property>
+    <set fetch="select" inverse="true" lazy="true" name="savingaccts" table="SAVINGACCT">
+      <key>
+        <column name="USERID" not-null="true" precision="5" scale="0"/>
+      </key>
+      <one-to-many class="com.syntelinc.BOK.ATM.menupkg.Savingacct"/>
+    </set>
+    <set fetch="select" inverse="true" lazy="true" name="checkingaccts" table="CHECKINGACCT">
+      <key>
+        <column name="USERID" not-null="true" precision="5" scale="0"/>
+      </key>
+      <one-to-many class="com.syntelinc.BOK.ATM.menupkg.Checkingacct"/>
+    </set>
+  </class>
+</hibernate-mapping>

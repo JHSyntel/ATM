@@ -7,6 +7,9 @@
     <include file="StrutsWithdraw.xml"/>
     <include file="StrutsDeposit.xml"/>
     <include file="StrutsMainMenu.xml"/>
+    <include file="StrutsSwipeCard.xml"/>
+    <include file="StrutsEnterPin.xml"/>
+    <include file="StrutsChangePin.xml"/>
     <!-- Configuration for the default package. -->
     <package name="default" extends="struts-default">
     </package>

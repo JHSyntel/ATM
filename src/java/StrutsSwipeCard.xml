@@ -4,18 +4,17 @@
    "http://struts.apache.org/dtds/struts-2.0.dtd">
 <struts>
     <constant name="struts.devMode" value="true" />
-    <package name="withdrawpkg" extends="struts-default">
-        
-        <action name="withdraw" 
-              class="com.syntelinc.BOK.ATM.withdrawpkg.WithdrawAct" 
-              method="execute">
+    <package name="com.syntelinc.BOK.ATM.auth.SwipeCardAction" extends="struts-default">        
+        <action name="SwipeCard" 
+            class="com.syntelinc.BOK.ATM.auth.SwipeCardAction" 
+            method="execute">
             
             <interceptor-ref name="params"/>
             <interceptor-ref name="validation"/>
             <interceptor-ref name="workflow"/>
-            <result name="input">/Views/Withdrawals/EnterWithdrawal.jsp</result>
-            <result name="success">/Views/Withdrawals/RetrieveCash.jsp</result>
-            <result name="error">/Views/Error.jsp</result>
+            <interceptor-ref name="defaultStack"/>
+            <result name="input">/Views/Auth/SwipeCard.jsp</result>
+            <result name="success">/Views/Auth/EnterPin.jsp</result>
         </action>
     </package>
 </struts>

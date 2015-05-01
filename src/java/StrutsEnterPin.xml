@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <constant name="struts.devMode" value="true" />
+    <package name="com.syntelinc.BOK.ATM.auth.EnterPinNum" extends="struts-default">
+        <action name="EnterPin" 
+            class="com.syntelinc.BOK.ATM.auth.EnterPinNum" 
+            method="execute">
+            
+            <interceptor-ref name="params"/>
+            <interceptor-ref name="validation"/>
+            <interceptor-ref name="workflow"/>
+            <interceptor-ref name="defaultStack"/>
+            <result name="input">/Views/Auth/InvalidPin.jsp</result>
+            <result name="success">/Views/MainMenu.jsp</result>
+            <result name="NOTAUTHED">/views/Landing.jsp</result>
+        </action>
+    </package>
+</struts>

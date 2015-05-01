@@ -15,7 +15,7 @@
     <body>
         <h1>THIS ARE MAIN MENUS</h1>
         <form method="link">
-            <input type="submit" value="Change Pin" formaction="ChangePin"/>
+            <input type="submit" value="Change Pin" formaction="/ATM/Views/Auth/ChangePin.jsp"/>
         </form>
     </body>
 </html>

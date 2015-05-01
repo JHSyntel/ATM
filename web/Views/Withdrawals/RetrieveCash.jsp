@@ -15,7 +15,7 @@
     <body>
         <h1>Retrieve Your Withdrawal</h1>
         <div>
-            <a href="WithdrawalSuccess.jsp"><img src="cashslot.jpeg" alt="Submit"/></a><br>
+            <a href="/ATM/Views/Withdrawals/WithdrawalSuccess.jsp"><img src="/ATM/Views/Withdrawals/cashslot.jpeg" alt="Submit"/></a><br>
             (Press the image to simulate retrieving your withdrawal of <s:property value="getText('{0,number,currency}', {withdrawamt})"/>.)
         </div>
     </body>

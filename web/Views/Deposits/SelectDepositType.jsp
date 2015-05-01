@@ -18,6 +18,7 @@
             <form method="link">
                 <input type="submit" value="Cash" formaction="InsertCash.jsp"/>
                 <input type="submit" value="Check" formaction="InsertCheck.jsp"/>
+                <input type="submit" value="Back" formaction="../SelectAccount.jsp"/>
             </form>
         </div>
     </body>

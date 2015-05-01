@@ -4,6 +4,7 @@
     Author     : EH5024424
 --%>
 
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="java.text.NumberFormat"%>
 <%@page import="com.opensymphony.xwork2.ActionContext"%>
 <%@page import="org.apache.struts2.dispatcher.SessionMap"%>
@@ -22,12 +23,15 @@
             <%
                 SessionMap sm = (SessionMap)ActionContext.getContext().getSession();
                 Double bal = (Double)sm.get("balance");
-                NumberFormat formatter = NumberFormat.getCurrencyInstance();
-                String curr = formatter.format(bal);
+                DecimalFormat format = new DecimalFormat("$#,##0.00;-$#,##0.00");
+                String curr = format.format(bal);
             %>
             Your new account balance is <%= curr %>.<br>
             Would you like to perform another transaction?<br>
-            Yes(main menu)/No(quit)
+            <form method="link">
+                <input type="submit" value="Yes" formaction="../MainMenu.jsp"/>
+                <input type="submit" value="No" formaction="../SplashScreen.jsp"/>
+            </form>
         </div>
     </body>
 </html>

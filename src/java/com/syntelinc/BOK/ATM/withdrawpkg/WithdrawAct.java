@@ -24,7 +24,7 @@ public class WithdrawAct extends ActionSupport implements SessionAware
     
     public WithdrawAct()
     {
-        
+        sessionMap = (SessionMap)ActionContext.getContext().getSession();
     }
     
     @Override
@@ -36,7 +36,8 @@ public class WithdrawAct extends ActionSupport implements SessionAware
             addActionError("Amount must be divisible by twenty.");
         
         CheckDailyLimit todayTrans = new CheckDailyLimit();
-        double amt = todayTrans.getCurrentTotal((int)sessionMap.get("accountid"));
+        System.out.println((String)sessionMap.get("accountid"));
+        double amt = todayTrans.getCurrentTotal((Integer.parseInt((String)sessionMap.get("accountid"))));
         if (amt >= 1000)
             addActionError("You have already reached your daily withdrawal limit of $1000.");
         else if (amt+withdrawamt > 1000)
@@ -48,10 +49,8 @@ public class WithdrawAct extends ActionSupport implements SessionAware
     {
         try
         {
-            sessionMap = (SessionMap)ActionContext.getContext().getSession();
             //TEST CODE - REMOVE AFTER INTEGRATION WITH ACCOUNT SELECTION
             sessionMap.put("accounttype", "checking");
-            sessionMap.put("accountid", "22");
 
             sessionMap.put("depositamt", Integer.toString(0));
             sessionMap.put("withdrawamt", Double.toString(withdrawamt));

@@ -5,6 +5,7 @@
 <struts>
     <constant name="struts.devMode" value="true" />
     <package name="withdrawpkg" extends="struts-default">
+        
         <action name="withdraw" 
               class="com.syntelinc.BOK.ATM.withdrawpkg.WithdrawAct" 
               method="execute">
@@ -12,7 +13,6 @@
             <interceptor-ref name="params"/>
             <interceptor-ref name="validation"/>
             <interceptor-ref name="workflow"/>
-            <interceptor-ref name="defaultStack"/>
             <result name="input">/Views/Withdrawals/EnterWithdrawal.jsp</result>
             <result name="success">/Views/Withdrawals/RetrieveCash.jsp</result>
             <result name="error">/Views/Error.jsp</result>

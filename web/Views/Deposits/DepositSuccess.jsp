@@ -27,7 +27,10 @@
             %>
             Your new account balance is <%= curr %>.<br>
             Would you like to perform another transaction?<br>
-            Yes(main menu)/No(quit)
+            <form method="link">
+                <input type="submit" value="Yes" formaction="../MainMenu.jsp"/>
+                <input type="submit" value="No" formaction="../SplashScreen.jsp"/>
+            </form>
         </div>
     </body>
 </html>

@@ -19,7 +19,7 @@
             Please try again or see a teller for assistance.<br>
             <form method="link">
                 <input type="submit" value="Try Again" formaction="SelectDepositType.jsp"/>
-                <input type="submit" value="Quit"/>
+                <input type="submit" value="Quit" formaction="../SplashScreen.jsp"/>
             </form>
         </div>
     </body>

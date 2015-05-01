@@ -15,7 +15,9 @@
         <h1>Error</h1>
         <div>
             Unfortunately, there was an error during your transaction. Your transaction details may not have been saved. Please contact a bank teller for assistance.<br>
-            Quit to landing button
+            <form method="link">
+                <input type="submit" value="Quit" formaction="SplashScreen.jsp"/>
+            </form>
         </div>
     </body>
 </html>

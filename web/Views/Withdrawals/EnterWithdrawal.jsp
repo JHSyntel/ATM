@@ -65,6 +65,9 @@
                     <td onclick="submitForm();">OK</td>
                 </tr>
             </table>
+            <form method="link">
+                <input type="submit" value="Back" formaction="../SelectAccount.jsp">
+            </form>
         </div>
     </body>
 </html>

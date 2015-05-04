@@ -4,6 +4,15 @@
     Author     : JH5024430
 --%>
 
+<%@page import="com.syntelinc.BOK.ATM.auth.ChangePinNum"%>
+<%@page import="java.util.Map"%>
+<%@page import="com.syntelinc.BOK.ATM.auth.Authentication"%>
+<%
+    String ACTIONNAME = "SwipeCard";
+    Boolean authStatus = Authentication.sessionActiveCheck();
+    System.out.println("session at " + ACTIONNAME + " action is " + authStatus);
+%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>

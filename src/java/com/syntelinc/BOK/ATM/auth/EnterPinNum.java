@@ -26,20 +26,17 @@ public class EnterPinNum extends ActionSupport implements SessionAware{
     }
     
     private Map<String, Object> getSession() {
-        return userSession = ActionContext.getContext().getSession();
+        return ActionContext.getContext().getSession();
     }
     
     public EnterPinNum()
     {
-        
+        userSession = getSession();
     }
     
     @Override
     public void validate()
     {
-        userSession = getSession();
-        if(!Authentication.sessionActive((boolean) userSession.get("authenticated")))
-            redirectToLanding();
         if(!"55555".equals(Integer.toString(pinNumber)))
             addActionError("Card not valid.");
     }

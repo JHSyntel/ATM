@@ -9,18 +9,20 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="/ATM/Views/ATMStyle1.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Bank of Kyle ATM</title>
     </head>
     <body>
-        <h1>Retrieve Your Deposit</h1>
+        <header><h1>Retrieve Your Deposit</h1></header>
         <div>
-            <img src="depositslot.jpeg"/><br>
+            <img src="/ATM/Views/Deposit/depositslot.jpeg"/><br>
             Please try again or see a teller for assistance.<br>
             <form method="link">
-                <input type="submit" value="Try Again" formaction="SelectDepositType.jsp"/>
-                <input type="submit" value="Quit" formaction="../SplashScreen.jsp"/>
+                <input type="submit" value="Try Again" formaction="/ATM/Views/Deposits/SelectDepositType.jsp"/>
+                <input type="submit" value="Quit" formaction="/ATM/Views/SplashScreen.jsp"/>
             </form>
         </div>
     </body>
+    <footer></footer>
 </html>

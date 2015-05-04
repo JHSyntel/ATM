@@ -1,11 +1,20 @@
+package com.syntelinc.BOK.ATM.fastcash;
 
-package in.syntel.BOK.ATM.fastcash;
-
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import com.syntelinc.BOK.ATM.transactionpkg.CheckingTransaction;
+import com.syntelinc.BOK.ATM.withdrawpkg.*;
+import in.syntel.BOK.ATM.ministatement.Checkingacct;
+import java.util.List;
+import java.util.Map;
+import org.apache.struts2.interceptor.SessionAware;
 
-public class FastCash extends ActionSupport
+public class FastCash extends ActionSupport  implements SessionAware
 {
-    private int amount;
+    private String amount;
+    private Map<String, Object> userSession;
+    
+    
     public FastCash()
     {
         
@@ -13,33 +22,45 @@ public class FastCash extends ActionSupport
 
     @Override
     public void validate() {
-        super.validate(); //To change body of generated methods, choose Tools | Templates.
+        super.validate(); 
     }
+    
 
     @Override
     public String execute() throws Exception 
     {
-        switch (getAmount())
+        userSession = ActionContext.getContext().getSession();
+        HibernateFastCash hib = new HibernateFastCash();
+        List l = hib.selectAccounts((int)userSession.get("userid"));
+        CheckDailyLimit lmt = new CheckDailyLimit();
+        Checkingacct checkingAccount = (Checkingacct)l.get(l.size()-1);
+        lmt.getCurrentTotal(checkingAccount.getCheckingid());
+        
+        
+        
+        switch (amount)
         {
-            case 20:
-                System.out.println("i'm amazing");
+            case "$   20" :
+                
+                
+                
                 break;
-            case 40:
+            case "$   40":
                 break;
-            case 60:
+            case "$   60":
                 break;
-            case 80:
+            case "$   80":
                 break;
-            case 100:
+            case "$  100":
                 break;
-            case 200:
+            case "$  200":
                 break;
 //            default:
 //                return "fail";
                 
         }
        
-        System.out.println("--------excute went thru");
+//        System.out.println("--------excute went thru");
         return SUCCESS;
     }
     private double debit;
@@ -61,14 +82,19 @@ public class FastCash extends ActionSupport
     /**
      * @return the amount
      */
-    public int getAmount() {
+    public String getAmount() {
         return amount;
     }
 
     /**
      * @param amount the amount to set
      */
-    public void setAmount(int amount) {
+    public void setAmount(String amount) {
         this.amount = amount;
+    }
+
+    @Override
+    public void setSession(Map<String, Object> map) {
+       userSession = map;
     }
 }

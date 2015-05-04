@@ -1,0 +1,17 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<!-- Author: NN5024428 -->
+ 
+<struts>
+   <constant name="struts.devMode" value="true" />
+    <package name="in.syntel.BOK.ATM.fastcash" extends="struts-default">
+        <action name="getAmount" 
+              class="com.syntelinc.BOK.ATM.fastcash" 
+              method="execute">
+            <result name="input">/Views/FastCash/FastCash.jsp</result>
+            <result name="success">/Views/FastCash/result.jsp</result>
+        </action>
+    </package>
+</struts>

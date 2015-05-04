@@ -1,0 +1,18 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<!-- Author: NN5024428 -->
+ 
+<struts>
+    <!-- Add your configuration elements here -->
+    <constant name="struts.devMode" value="true"/>
+    <package name="in.syntel.BOK.ATM.ministatement" extends="struts.default">
+        <action name="checkdate" 
+                class="in.syntel.BOK.ATM.ministatement.MiniStatement"
+                method="execute">
+            <result name="input">Views/ViewStatement/SelectRange.jsp</result>
+            <result name="success">Views/ViewStatement/ViewStatement</result>
+        </action>
+    </package>
+</struts>

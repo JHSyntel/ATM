@@ -14,53 +14,49 @@
         <title>ATM</title>
     </head>
     <body>
-        <div>PIN Entry and Fast Cash</div>
-        <div>Please Enter Your Pin:</div>                
-        <input type="text" required/>
-        
         <div>Select a Fast Cash Amount or select Other Transactions</div>
-        <s:form>
-        <table>
-            <tr>
-                <td>
-                    <s:submit value="$   20" formaction="fast20"/>
-                </td>
-                <td>
-                    <s:submit value="$   40" formaction="fast40"/>
-                </td>
-                <td>
-                    <s:submit value="$   60" formaction="fast60"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <s:submit value="$   80" formaction="fast80"/>
-                </td>
-                <td>
-                    <s:submit value="$ 100" formaction="fast100"/>
-                </td>
-                <td>
-                    <s:submit value="$ 200" formaction="fast200"/>
-                </td>
-            </tr>
-            
-        </table>
+        <s:form action="getAmount">
+            <table>
+                <tr>
+                    <td>
+                        <s:submit value="$   20" name="amount"/>
+                    </td>
+                    <td>
+                        <s:submit value="$   40" name="amount"/>
+                    </td>
+                    <td>
+                        <s:submit value="$   60" name="amount"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <s:submit value="$   80" name="amount"/>
+                    </td>
+                    <td>
+                        <s:submit value="$ 100" name="amount"/>
+                    </td>
+                    <td>
+                        <s:submit value="$ 200" name="amount"/>
+                    </td>
+                </tr>
+
+            </table>
         </s:form>           
-        
+
         <s:form method="link">
-        <table>
-            <tr>
-                <td>
-                    <s:submit value="Other Transactions" formaction=""/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <s:submit value="Cancel" formaction="../../index.jsp"/>
-                </td>
-            </tr>
-        </table>
+            <table>
+                <tr>
+                    <td>
+                        <s:submit value="Other Transactions" formaction=""/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <s:submit value="Cancel" formaction="../../index.jsp"/>
+                    </td>
+                </tr>
+            </table>
         </s:form>
-        
+
     </body>
 </html>

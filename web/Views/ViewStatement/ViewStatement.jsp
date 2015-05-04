@@ -17,7 +17,9 @@
     <body>
         <header><h1>Statement Details:</h1></header>
         <form>
-            
+            <table>
+                
+            </table>
         </form>
     </body>
     <footer></footer>

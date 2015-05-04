@@ -1,0 +1,263 @@
+/* ATM Style */
+
+
+/* =Reset
+-------------------------------------------------------------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,head
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	border: 0;
+	font-family: inherit;
+	font-size: 100%;
+	font-style: inherit;
+	font-weight: inherit;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+
+/* =Global
+----------------------------------------------- */
+
+html {
+	font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
+	overflow: hidden; /* Keeps page centred in all browsers regardless of content height */
+	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+	-ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+}
+
+html::-webkit-scrollbar{ 
+    display: none;
+}
+body {
+	background: #FFFFFF;
+	background-image: url('/ATM/Views/BOK2.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        
+}
+
+
+input[type = submit]
+ { font-family: Arial, Helvetica, sans-serif; 
+   margin-top: 20px;
+   background-color: #D1D0CE;
+   margin-left: auto;
+   margin-right: auto;
+   display: block;
+
+} /* button gray */
+
+input,
+select,
+textarea {
+
+	font-family:Verdana, Geneva, sans-serif;
+	font-size: 150%;
+
+}
+
+button  { 
+	font-family: Arial, Helvetica, sans-serif; 
+	background-color: #D1D0CE} /* button gray */
+
+/* circle ATM Number Keypad Buttons */
+#keypad {margin:auto; margin-top:20px;}
+
+#keypad input [type = button] 
+{
+        display: block;
+        text-align: center; 
+	width: 5%;
+	height: 5%;
+        margin-right: auto;
+        margin-left: auto;
+	border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+        font-size:100%; 
+        font-weight:bold; 
+        padding: 27px;
+        cursor:pointer; 
+        background-color:#666666; 
+        color:#CCCCCC; 
+}
+#keypad input:hover {background-color:#999889; color:#FFFF00;}
+
+#keypad.btnOkay   
+{ 
+	font-family: Arial, Helvetica, sans-serif; 
+	background-color: #4CC417;
+
+} /* Green to indicate "go" */
+
+#keypad.btnCancel 
+{ 
+	font-family: Arial, Helvetica, sans-serif; 
+	background-color: #FF0000;
+
+} /* Red to indicate "cancel" */
+
+
+/* Headings */
+h1,h2,h3,h4,h5,h6 {
+	font-family:Verdana, Geneva, sans-serif;
+		text-align: center;
+                font-size: 350%;
+                font-weight: bold;
+                background: #99C2CA;
+                background-size: contain 10%;
+		float: right;  
+		width: 50%; 
+    		border-bottom: 1px solid #99C2CA;
+                padding: 40px;
+                margin-bottom: 10px;
+}
+hr {
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+
+/* Text elements */
+p {
+	margin-bottom: 1.5em;
+}
+ul, ol {
+	margin: 0 0 1.5em 3em;
+}
+ul {
+	list-style: disc;
+}
+ol {
+	list-style: decimal;
+}
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+dt {
+	font-weight: bold;
+}
+dd {
+	margin: 0 1.5em 1.5em;
+}
+b, strong {
+	font-weight: bold;
+}
+dfn, cite, em, i {
+	font-style: italic;
+}
+blockquote {
+	margin: 0 1.5em;
+}
+address {
+	margin: 0 0 1.5em;
+}
+pre
+{
+    background: #eee;
+    font-family: "Courier 10 Pitch" , Courier, monospace;
+    font-size: 15px;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+    padding: 1.6em;
+    overflow: auto;
+    max-width: 100%;
+}
+code, kbd, tt, var {
+	font: 13px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	white-space: normal;
+}
+abbr, acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+mark, ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+sup,
+sub {
+	font-size: 75%;
+	height: 0;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {
+	bottom: 1ex;
+}
+sub {
+	top: .5ex;
+}
+small {
+	font-size: 75%;
+}
+big {
+	font-size: 125%;
+}
+figure {
+	margin: 0;
+}
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+th {
+	font-weight: bold;
+}
+img {
+	
+	height: auto; /* Make sure images are scaled correctly. */
+	max-width: 100%; /* Adhere to container width. */
+	
+}
+
+/* Header */
+
+header 
+{  
+   clear: both;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-image: url("/ATM/Views/BOK.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: #99C2CA;
+  min-height: 200px;
+  text-align: center;
+
+}  
+
+
+/* Footer */
+
+footer
+{
+    background: #AD6DDC;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+
+}
+
+.fcred, .fcred a
+{
+    color: #000000;
+}
+

@@ -9,19 +9,21 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="ATMStyle1.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Bank of Kyle ATM</title>
     </head>
     <body>
-        <h1>Confirm the Amount on Your Check</h1>
+        <header><h1>Confirm the Amount on Your Check</h1></header>
         <div>
-            <img src="scannedcheck.jpg"/><br>
+            <img src="/ATM/Views/Deposits/scannedcheck.jpg"/><br>
             (Please note that this is an example check.)<br>
             You deposited: <s:property value="getText('{0,number,currency}', {depositcheckamt})"/>
             <s:form method="link">
                 <s:submit value="Yes" formaction="Deposit"/>
-                <s:submit value="No" formaction="WrongAmount.jsp"/>
+                <s:submit value="No" formaction="/ATM/Views/Deposits/WrongAmount.jsp"/>
             </s:form>
         </div>
     </body>
+    <footer></footer>
 </html>

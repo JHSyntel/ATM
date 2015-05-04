@@ -23,8 +23,9 @@ public class SignoutAct extends ActionSupport implements SessionAware
     @Override
     public String execute()
     {
-        sessionMap = (SessionMap)ActionContext.getContext().getSession();
-        sessionMap = null;
+//        sessionMap = (SessionMap)ActionContext.getContext().getSession();
+//        sessionMap = null;
+        ActionContext.getContext().getSession().clear();
         return SUCCESS;
     }
     

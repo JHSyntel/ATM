@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 30, 2015 3:45:12 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="hibernate.Checkingtrans" table="CHECKINGTRANS" schema="SYSTEM" optimistic-lock="version">
+        <id name="transid" type="big_decimal">
+            <column name="TRANSID" precision="38" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="checkingacct" class="hibernate.Checkingacct" fetch="select">
+            <column name="CHECKINGID" precision="8" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="location" type="string">
+            <column name="LOCATION" length="50" not-null="true" />
+        </property>
+        <property name="balance" type="big_decimal">
+            <column name="BALANCE" precision="20" not-null="true" />
+        </property>
+        <property name="debit" type="big_decimal">
+            <column name="DEBIT" precision="20" not-null="true" />
+        </property>
+        <property name="credit" type="big_decimal">
+            <column name="CREDIT" precision="20" not-null="true" />
+        </property>
+        <property name="details" type="string">
+            <column name="DETAILS" length="20" />
+        </property>
+        <property name="time" type="date">
+            <column name="TIME" length="7" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -29,7 +29,7 @@
             Your new account balance is <%= curr %>.<br>
             Would you like to perform another transaction?<br>
             <form method="link">
-                <input type="submit" value="Yes" formaction="../MainMenu.jsp"/>
+                <input type="submit" value="Yes" formaction="/ATM/Views/MainMenu.jsp"/>
                 <input type="submit" value="No" formaction="SignoutAct"/>
             </form>
         </div>

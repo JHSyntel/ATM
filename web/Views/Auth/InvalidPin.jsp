@@ -5,7 +5,7 @@
     if(authStatus == -1) { %>
         <jsp:forward page="/Views/Auth/NoSession.jsp"/> 
 <%  }
-    if(authStatus == 1) { %>
+    if(authStatus == 0) { %>
     <jsp:forward page="/Views/Auth/NotAuthorized.jsp"/>
 <%  }  
     System.out.println("authCheck at " + ACTIONNAME + " action is " + authStatus);
@@ -26,7 +26,7 @@
             Please try again or see a teller for assistance.<br><br>
             <form method="link">
                 <input type="submit" value="Try Again" formaction="SwipeCard"/>
-                <input type="submit" value="Quit" formaction="ATM/Views/Landing.jsp"/>
+                <input type="submit" value="Quit" formaction="ATM/Views/SignoutAct"/>
             </form>
         </div>
     </body>

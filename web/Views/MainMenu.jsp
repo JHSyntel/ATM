@@ -25,7 +25,7 @@
             <br><br>
             <input type="submit" value="Change Pin" formaction="ChangePinSelected"/>
             <br><br><br><br>
-            <input type="submit" value="Logout" formaction="LogoutSelected"/>
+            <input type="submit" value="Logout" formaction="SignoutAct"/>
         </form>
     </body>
     <footer></footer>

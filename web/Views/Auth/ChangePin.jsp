@@ -11,7 +11,7 @@
     if(authStatus == -1) { %>
         <jsp:forward page="/Views/Auth/NoSession.jsp"/> 
 <%  }
-    if(authStatus == 1) { %>
+    if(authStatus == 0) { %>
     <jsp:forward page="/Views/Auth/NotAuthorized.jsp"/>
 <%  }  
     System.out.println("authCheck at " + ACTIONNAME + " action is " + authStatus);

@@ -64,10 +64,10 @@ public class Authentication {
     if(b == null)
         //<jsp:forward page="/Views/Auth/NoSession.jsp"/> 
         return -1;
-    else if( Objects.equals(b, Boolean.FALSE))
+    else if( b.equals(Boolean.FALSE))
         //<jsp:forward page="/Views/Auth/NotAuthorized.jsp"/>   
         return 0;
-    else if( Objects.equals(b, Boolean.TRUE))
+    else if( b.equals(Boolean.TRUE))
         return 3;
     else
         return -2;

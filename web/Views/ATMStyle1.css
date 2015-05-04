@@ -72,7 +72,7 @@ button  {
 /* circle ATM Number Keypad Buttons */
 #keypad {margin:auto; margin-top:20px;}
 
-#keypad input [type = button] 
+#keypad button 
 {
         display: block;
         text-align: center; 

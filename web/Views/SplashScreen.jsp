@@ -17,6 +17,6 @@
         <form method="link">
             <input type="submit" value ="START" formaction="SwipeCard"/>
         </form>
+        <footer></footer>
     </body>
-   <footer></footer>
 </html>

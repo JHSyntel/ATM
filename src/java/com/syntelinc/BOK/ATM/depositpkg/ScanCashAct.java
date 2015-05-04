@@ -39,7 +39,6 @@ public class ScanCashAct extends ActionSupport implements SessionAware
         sessionMap = (SessionMap)ActionContext.getContext().getSession();
         //TEST CODE - REMOVE AFTER INTEGRATION WITH ACCOUNT SELECTION
         sessionMap.put("accounttype", "checking");
-        sessionMap.put("accountid", "22");
         
         sessionMap.put("depositamt", Double.toString(depositcashamt));
         sessionMap.put("withdrawamt", Integer.toString(0));

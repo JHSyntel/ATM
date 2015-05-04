@@ -9,7 +9,7 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, font, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
-dl, dt, dd, ol, ul, li,
+dl, dt, dd, ol, ul, li,head
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td {
 	border: 0;
@@ -28,15 +28,33 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 
 html {
 	font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
-	overflow-y: scroll; /* Keeps page centred in all browsers regardless of content height */
+	overflow: hidden; /* Keeps page centred in all browsers regardless of content height */
 	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
 	-ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
 }
+
+html::-webkit-scrollbar{ 
+    display: none;
+}
 body {
 	background: #FFFFFF;
-	background-image: url('..BOK2.png');
+	background-image: url('/ATM/Views/BOK2.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        
 }
 
+
+input[type = submit]
+ { font-family: Arial, Helvetica, sans-serif; 
+   margin-top: 20px;
+   background-color: #D1D0CE;
+   margin-left: auto;
+   margin-right: auto;
+   display: block;
+
+} /* button gray */
 
 input,
 select,
@@ -51,39 +69,57 @@ button  {
 	font-family: Arial, Helvetica, sans-serif; 
 	background-color: #D1D0CE} /* button gray */
 
-/* circle ATM Number Pad Buttons */
-.Numpad.btn 	  { 
+/* circle ATM Number Keypad Buttons */
+#keypad {margin:auto; margin-top:20px;}
 
-    display:block;
-    padding: 27px;
-    border-radius: 55%;
-    -moz-border-radius: 55px;
-    -webkit-border-radius: 55px;
-    color:#f5f5f5;   
-    text-align: center;
-    background-color: #464646;
-    font-size: 155%;
-    font-weight:bold;
+#keypad input [type = button] 
+{
+        display: block;
+        text-align: center; 
+	width: 5%;
+	height: 5%;
+        margin-right: auto;
+        margin-left: auto;
+	border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+        font-size:100%; 
+        font-weight:bold; 
+        padding: 27px;
+        cursor:pointer; 
+        background-color:#666666; 
+        color:#CCCCCC; 
 }
-.Numpad.btnOkay   
+#keypad input:hover {background-color:#999889; color:#FFFF00;}
+
+#keypad.btnOkay   
 { 
 	font-family: Arial, Helvetica, sans-serif; 
-	background-color: #4CC417
+	background-color: #4CC417;
 
 } /* Green to indicate "go" */
 
-.Numpad.btnCancel 
+#keypad.btnCancel 
 { 
 	font-family: Arial, Helvetica, sans-serif; 
-	background-color: #FF0000
+	background-color: #FF0000;
 
 } /* Red to indicate "cancel" */
 
 
 /* Headings */
 h1,h2,h3,h4,h5,h6 {
-	clear: both;
-		font-family:Verdana, Geneva, sans-serif;
+	font-family:Verdana, Geneva, sans-serif;
+		text-align: center;
+                font-size: 350%;
+                font-weight: bold;
+                background: #99C2CA;
+                background-size: contain 10%;
+		float: right;  
+		width: 50%; 
+    		border-bottom: 1px solid #99C2CA;
+                padding: 40px;
+                margin-bottom: 10px;
 }
 hr {
 	background-color: #ccc;
@@ -184,56 +220,39 @@ th {
 	font-weight: bold;
 }
 img {
+	
 	height: auto; /* Make sure images are scaled correctly. */
 	max-width: 100%; /* Adhere to container width. */
-}
-
-/* Mobile navagation */
-@media screen and (max-width: 768px) {
-
-
-.mobilenavi{
-	width: 100%;
-	padding:5px 10px;
-	height: 40px;
 	
 }
-
-select.mnav
-    {
-        width: 100%;
-        background: transparent;
-        border: none;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        height: 40px;
-        color: #000000;
-        font-weight: bold;
-    }
-
 
 /* Header */
 
 header 
 {  
-   background: #00667B;
+   clear: both;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-image: url("/ATM/Views/BOK.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: #99C2CA;
+  min-height: 200px;
+  text-align: center;
 
-<img src="BOK.png" 
-    alt="BOKLogo" 
-    height="200" 
-    width="200"    
-    float:left />
 }  
 
 
 /* Footer */
 
-.site-footer
+footer
 {
-    background: #00667B;
-    padding: 20px 0px;
-    border-top: 1px solid #333;
+    background: #AD6DDC;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
 
 }
 

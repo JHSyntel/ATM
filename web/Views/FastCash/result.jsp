@@ -1,7 +1,7 @@
 <%-- 
-    Document   : landing
-    Created on : Apr 30, 2015, 3:14:48 PM
-    Author     : JH5024430
+    Document   : result
+    Created on : Apr 29, 2015, 2:00:33 PM
+    Author     : NN5024428
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -12,6 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>You are AWESOME!!!</h1>
     </body>
 </html>

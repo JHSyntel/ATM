@@ -9,11 +9,12 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="/ATM/Views/ATMStyle1.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Bank of Kyle ATM</title>
     </head>
     <body>
-        <h1>Select Account</h1>
+        <header><h1>Select Account</h1></header>
         <s:form action="SelectAccount">
    
             <s:iterator>
@@ -22,8 +23,11 @@
             </s:iterator>
                 
             <br><br><br>
-            <s:submit value="Cancel" name="cancel"/>
+        </s:form>
+        <s:form method="link">
+            <s:submit value="Cancel" name="cancel" formaction="/ATM/Views/MainMenu.jsp"/>
         </s:form>
             
     </body>
+    <footer></footer>
 </html>

@@ -4,16 +4,30 @@
     Author     : JH5024430
 --%>
 
+<%@page import="com.syntelinc.BOK.ATM.auth.Authentication"%>
+<%
+    String ACTIONNAME = "ChangePin";
+    int authStatus = Authentication.authCheck();
+    if(authStatus == -1) { %>
+        <jsp:forward page="/Views/Auth/NoSession.jsp"/> 
+<%  }
+    if(authStatus == 1) { %>
+    <jsp:forward page="/Views/Auth/NotAuthorized.jsp"/>
+<%  }  
+    System.out.println("authCheck at " + ACTIONNAME + " action is " + authStatus);
+%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="/ATM/Views/ATMStyle1.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Bank of Kyle ATM</title>
     </head>
     <body>
-        <h1>Please swipe (input card number) your card.</h1>
+        <header><h1>Please swipe (input card number) your card.</h1></header>
         <s:form>
             <s:if test="hasActionErrors()">
                 <s:actionerror/>
@@ -31,4 +45,5 @@
             <s:submit value="Cancel" formaction="/ATM/Views/MainMenu.jsp"/>
         </s:form>
     </body>
+    <footer></footer>
 </html>

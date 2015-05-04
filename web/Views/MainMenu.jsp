@@ -8,11 +8,12 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="ATMStyle1.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Bank of Kyle ATM</title>
     </head>
     <body>
-        <h1>Main Menu</h1>
+        <header><h1>Main Menu</h1></header>
         <form>
             <input type="submit" value="Withdraw" formaction="WithdrawSelected"/>
             <br><br>
@@ -27,4 +28,5 @@
             <input type="submit" value="Logout" formaction="LogoutSelected"/>
         </form>
     </body>
+    <footer></footer>
 </html>

@@ -28,12 +28,12 @@
                     document.forms[0].withdrawamt.value = "0";
             }
             </script>
-
+        <link rel="stylesheet" type="text/css" href="ATMStyle1.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Bank of Kyle ATM</title>
     </head>
     <body onload="emptyCode();">
-        <h1>Enter Amount to Withdraw</h1>
+        <header><h1>Enter Amount to Withdraw</h1></header>
         <div>
             <s:if test="hasActionErrors()">
                 <s:actionerror/>
@@ -70,4 +70,5 @@
             </form>
         </div>
     </body>
+    <footer></footer>
 </html>

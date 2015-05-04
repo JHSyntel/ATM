@@ -14,10 +14,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="ATMStyle1.css">
         <title>Bank of Kyle ATM</title>
     </head>
     <body>
-        <h1>Success</h1>
+        <header><h1>Success</h1></header>
         <div>
             Your withdrawal completed successfully.<br>
             <%
@@ -34,4 +35,5 @@
             </form>
         </div>
     </body>
+    <footer></footer>
 </html>

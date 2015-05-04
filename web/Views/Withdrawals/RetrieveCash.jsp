@@ -9,14 +9,16 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="ATMStyle1.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Bank of Kyle ATM</title>
     </head>
     <body>
-        <h1>Retrieve Your Withdrawal</h1>
+        <header><h1>Retrieve Your Withdrawal</h1></header>
         <div>
             <a href="/ATM/Views/Withdrawals/WithdrawalSuccess.jsp"><img src="/ATM/Views/Withdrawals/cashslot.jpeg" alt="Submit"/></a><br>
             (Press the image to simulate retrieving your withdrawal of <s:property value="getText('{0,number,currency}', {withdrawamt})"/>.)
         </div>
     </body>
+    <footer></footer>
 </html>

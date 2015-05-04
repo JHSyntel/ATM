@@ -8,11 +8,12 @@
 <!DOCTYPE html>
 <html>
     <head>
+       <link rel="stylesheet" type="text/css" href="/ATM/Views/ATMStyle1.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Error</h1>
+        <header><h1>Error</h1></header>
         <div>
             Unfortunately, there was an error during your transaction. Your transaction details may not have been saved. Please contact a bank teller for assistance.<br>
             <form method="link">
@@ -20,4 +21,5 @@
             </form>
         </div>
     </body>
+    <footer></footer>
 </html>

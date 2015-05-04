@@ -4,10 +4,14 @@
  * and open the template in the editor.
  */
 
+package in.syntel.BOK.ATM;
+
+import com.opensymphony.xwork2.ActionSupport;
+
 /**
  *
- * @author KB5024427
+ * @author JH5024430
  */
-public class SavingsAccount {
-
+public class ChangePinNum extends ActionSupport{
+    
 }

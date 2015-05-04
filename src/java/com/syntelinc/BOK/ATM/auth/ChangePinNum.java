@@ -28,32 +28,36 @@ public class ChangePinNum extends ActionSupport implements SessionAware{
     }
     
     private Map<String, Object> getSession() {
-        return userSession = ActionContext.getContext().getSession();
+        return ActionContext.getContext().getSession();
     }
     
     public ChangePinNum()
     {
-        
+        userSession = getSession();
     }
     
     @Override
     public void validate()
     {    
-        userSession = getSession();
-        try {
-            if(!Authentication.sessionActive((boolean) userSession.get("authenticated")))
-                userSession.put("authenticated", false);
-        } catch (NullPointerException e) {
-            System.out.println("Null detected, redirect");
-            userSession.put("authenticated", false);
-            this.execute();
-        }
+//        userSession = getSession();
+//        try {
+//            if(!Authentication.sessionActive((boolean) userSession.get("authenticated")))
+//                userSession.put("authenticated", false);
+//        } catch (NullPointerException e) {
+//            System.out.println("Null detected, redirect");
+//            userSession.put("authenticated", false);
+//            this.execute();
+//        }
         if(Authentication.pinIsCorrect(currentPinNumber))
             addActionError("Pin not valid.");
         if(!Authentication.pinFieldsAreEqual(newPinNumber, confirmNewPinNumber))
             addActionError("Pin fields are not equal.");
         if(!Authentication.validPin(newPinNumber))
             addActionError("New pin must be numeric and 5 digits long");
+    }
+    
+    static public String redirectToSplash() {
+        return "NOTAUTHED";
     }
     
     @Override

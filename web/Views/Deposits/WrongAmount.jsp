@@ -9,11 +9,12 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="/ATM/Views/ATMStyle1.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Bank of Kyle ATM</title>
     </head>
     <body>
-        <h1>Retrieve Your Deposit</h1>
+        <header><h1>Retrieve Your Deposit</h1></header>
         <div>
             <img src="/ATM/Views/Deposit/depositslot.jpeg"/><br>
             Please try again or see a teller for assistance.<br>
@@ -23,4 +24,5 @@
             </form>
         </div>
     </body>
+    <footer></footer>
 </html>

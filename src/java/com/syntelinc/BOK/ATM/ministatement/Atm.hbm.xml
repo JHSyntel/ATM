@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 30, 2015 1:32:53 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="in.syntel.BOK.ATM.ministatement.Atm" table="ATM" schema="SYSTEM" optimistic-lock="version">
+        <id name="atmid" type="int">
+            <column name="ATMID" precision="8" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="branch" class="in.syntel.BOK.ATM.ministatement.Branch" fetch="select">
+            <column name="BRANCHID" precision="7" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="status" type="char">
+            <column name="STATUS" length="1" not-null="true" />
+        </property>
+        <property name="availablecash" type="int">
+            <column name="AVAILABLECASH" precision="6" scale="0" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

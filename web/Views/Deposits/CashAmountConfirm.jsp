@@ -9,11 +9,12 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="/ATM/Views/ATMStyle1.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Bank of Kyle ATM</title>
     </head>
     <body>
-        <h1>Confirm Amount Deposited</h1>
+        <header><h1>Confirm Amount Deposited</h1></header>
         <div>
             You deposited: <s:property value="getText('{0,number,currency}', {depositcashamt})"/>
             <s:form method="link">
@@ -24,4 +25,5 @@
             
         </div>
     </body>
+    <footer></footer>
 </html>

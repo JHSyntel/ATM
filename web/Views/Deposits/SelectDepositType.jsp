@@ -9,11 +9,12 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="/ATM/Views/ATMStyle1.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Bank of Kyle ATM</title>
     </head>
     <body>
-        <h1>Select Deposit Type</h1>
+        <header><h1>Select Deposit Type</h1></header>
         <div>
             <form method="link">
                 <input type="submit" value="Cash" formaction="/ATM/Views/Deposits/InsertCash.jsp"/>
@@ -22,4 +23,5 @@
             </form>
         </div>
     </body>
+    <footer></footer>
 </html>

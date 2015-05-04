@@ -16,8 +16,8 @@
         <h1>Select Deposit Type</h1>
         <div>
             <form method="link">
-                <input type="submit" value="Cash" formaction="/ATM/Views/Deposit/InsertCash.jsp"/>
-                <input type="submit" value="Check" formaction="/ATM/Views/Deposit/InsertCheck.jsp"/>
+                <input type="submit" value="Cash" formaction="/ATM/Views/Deposits/InsertCash.jsp"/>
+                <input type="submit" value="Check" formaction="/ATM/Views/Deposits/InsertCheck.jsp"/>
                 <input type="submit" value="Back" formaction="/ATM/Views/SelectAccount.jsp"/>
             </form>
         </div>

@@ -18,7 +18,7 @@
             <img src="/ATM/Views/Deposit/depositslot.jpeg"/><br>
             Please try again or see a teller for assistance.<br>
             <form method="link">
-                <input type="submit" value="Try Again" formaction="/ATM/Views/Deposit/SelectDepositType.jsp"/>
+                <input type="submit" value="Try Again" formaction="/ATM/Views/Deposits/SelectDepositType.jsp"/>
                 <input type="submit" value="Quit" formaction="/ATM/Views/SplashScreen.jsp"/>
             </form>
         </div>

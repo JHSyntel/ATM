@@ -19,7 +19,7 @@
             <form method="link">
                 <input type="submit" value="Cash" formaction="/ATM/Views/Deposits/InsertCash.jsp"/>
                 <input type="submit" value="Check" formaction="/ATM/Views/Deposits/InsertCheck.jsp"/>
-                <input type="submit" value="Back" formaction="/ATM/Views/SelectAccount.jsp"/>
+                <input type="submit" value="Cancel" formaction="/ATM/Views/MainMenu.jsp"/>
             </form>
         </div>
     </body>

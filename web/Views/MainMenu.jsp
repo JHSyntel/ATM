@@ -23,7 +23,7 @@
             <br><br>
             <input type="submit" value="Print Mini Statement" formaction="StatementSelected"/>
             <br><br>
-            <input type="submit" value="Change Pin" formaction="PinChangeSelected"/>
+            <input type="submit" value="Change Pin" formaction="ChangePinSelected"/>
             <br><br><br><br>
             <input type="submit" value="Logout" formaction="LogoutSelected"/>
         </form>

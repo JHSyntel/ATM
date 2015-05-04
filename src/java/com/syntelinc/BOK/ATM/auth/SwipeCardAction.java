@@ -27,18 +27,17 @@ public class SwipeCardAction extends ActionSupport implements SessionAware {
     }
     
     private Map<String, Object> getSession() {
-        return userSession = ActionContext.getContext().getSession();
+        return ActionContext.getContext().getSession();
     }
     
     public SwipeCardAction()
     {
-        
+        userSession = getSession();   
     }
     
     @Override
     public void validate()
     {
-        userSession = getSession();
         if(!Authentication.validID(cardNumber))
             addActionError("User not valid");
         if(!"55555".equals(Integer.toString(cardNumber)))
@@ -48,7 +47,9 @@ public class SwipeCardAction extends ActionSupport implements SessionAware {
     @Override
     public String execute()
     {
-        userSession.put("authenticated", true);
+        userSession = getSession();
+        userSession.put("authenticated", Boolean.TRUE);
+        System.out.println("SwipeCardAction - Authenticated: " + userSession.get("authenticated"));
         return SUCCESS;
     }
 

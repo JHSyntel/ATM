@@ -1,3 +1,16 @@
+<%@page import="com.syntelinc.BOK.ATM.auth.Authentication"%>
+<%
+    String ACTIONNAME = "InvalidCard";
+    int authStatus = Authentication.authCheck();
+    if(authStatus == -1) { %>
+        <jsp:forward page="/Views/Auth/NoSession.jsp"/> 
+<%  }
+    if(authStatus == 1) { %>
+    <jsp:forward page="/Views/Auth/NotAuthorized.jsp"/>
+<%  }  
+    System.out.println("authCheck at " + ACTIONNAME + " action is " + authStatus);
+%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>

@@ -9,11 +9,12 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="ATMStyle1.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Bank of Kyle ATM</title>
     </head>
     <body>
-        <h1>Please enter your pin number:</h1>
+        <header><h1>Please enter your pin number:</h1></header>
         <s:form action="EnterPin">
             <s:if test="hasActionErrors()">
                 <s:actionerror/>
@@ -23,4 +24,5 @@
             <s:submit>Submit</s:submit>
         </s:form>
     </body>
+    <footer></footer>
 </html>

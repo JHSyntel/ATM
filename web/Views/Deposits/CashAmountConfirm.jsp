@@ -13,7 +13,7 @@
         <title>Bank of Kyle ATM</title>
     </head>
     <body>
-        <h1>Confirm Amount Deposited</h1>
+        <header><h1>Confirm Amount Deposited</h1></header>
         <div>
             You deposited: <s:property value="getText('{0,number,currency}', {depositcashamt})"/>
             <s:form method="link">
@@ -24,4 +24,5 @@
             
         </div>
     </body>
+    <footer></footer>
 </html>

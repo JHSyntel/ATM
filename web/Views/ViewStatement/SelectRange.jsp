@@ -10,11 +10,12 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="ATMStyle1.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>ATM</title>
     </head>
     <body>
-        <h1>Mini Statement</h1>
+        <header><h1>Mini Statement</h1></header>
         <p> Please Select a date range:</p>
         <form>
             
@@ -26,4 +27,5 @@
         <s:submit value="Get Details" formaction="checkdate"/>
         </form>
     </body>
+    <footer></footer>
 </html>

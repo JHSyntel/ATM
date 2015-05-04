@@ -9,11 +9,12 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="ATMStyle1.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Bank of Kyle ATM</title>
     </head>
     <body>
-        <h1>Please swipe (input card number) your card.</h1>
+        <header><h1>Please swipe (input card number) your card.</h1></header>
         <s:form>
             <s:if test="hasActionErrors()">
                 <s:actionerror/>
@@ -31,4 +32,5 @@
             <s:submit value="Cancel" formaction="/ATM/Views/MainMenu.jsp"/>
         </s:form>
     </body>
+    <footer></footer>
 </html>

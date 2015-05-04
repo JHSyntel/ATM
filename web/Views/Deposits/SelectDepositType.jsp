@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="ATMStyle1.css">
+        <link rel="stylesheet" type="text/css" href="/ATM/Views/ATMStyle1.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Bank of Kyle ATM</title>
     </head>
@@ -19,7 +19,7 @@
             <form method="link">
                 <input type="submit" value="Cash" formaction="/ATM/Views/Deposits/InsertCash.jsp"/>
                 <input type="submit" value="Check" formaction="/ATM/Views/Deposits/InsertCheck.jsp"/>
-                <input type="submit" value="Back" formaction="/ATM/Views/SelectAccount.jsp"/>
+                <input type="submit" value="Cancel" formaction="/ATM/Views/MainMenu.jsp"/>
             </form>
         </div>
     </body>

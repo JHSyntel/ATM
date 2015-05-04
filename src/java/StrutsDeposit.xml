@@ -13,6 +13,7 @@
             <interceptor-ref name="params"/>
             <interceptor-ref name="validation"/>
             <interceptor-ref name="workflow"/>
+            <interceptor-ref name="defaultStack"/>
             <result name="input">/Views/Deposits/SelectDepositType.jsp</result>
             <result name="success">/Views/Deposits/DepositSuccess.jsp</result>
             <result name="error">/Views/Error.jsp</result>

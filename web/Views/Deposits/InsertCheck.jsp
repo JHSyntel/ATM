@@ -19,10 +19,10 @@
                 <s:actionerror/>
             </s:if>
             <s:form method="link">
-                <input type="image" src="depositslot.jpeg" alt="Submit" formaction="ScanCheck"/><br>
+                <input type="image" src="/ATM/Views/Deposits/depositslot.jpeg" alt="Submit" formaction="ScanCheck"/><br>
                 (Until deposit reader is installed, enter amount deposited here, then click the above image.)<br>
                 <s:textfield name="depositcheckamt"/>
-                <input type="submit" value="Back" formaction="SelectDepositType.jsp"/>
+                <input type="submit" value="Back" formaction="/ATM/Views/Deposits/SelectDepositType.jsp"/>
             </s:form>
         </div>
     </body>

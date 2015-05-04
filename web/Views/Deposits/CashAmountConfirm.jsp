@@ -18,7 +18,7 @@
             You deposited: <s:property value="getText('{0,number,currency}', {depositcashamt})"/>
             <s:form method="link">
                 <s:submit value="Yes" formaction="Deposit"/>
-                <s:submit value="No" formaction="WrongAmount.jsp"/>
+                <s:submit value="No" formaction="/ATM/Views/Deposits/WrongAmount.jsp"/>
             </s:form>
             
             

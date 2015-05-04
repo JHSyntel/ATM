@@ -15,12 +15,12 @@
     <body>
         <h1>Confirm the Amount on Your Check</h1>
         <div>
-            <img src="scannedcheck.jpg"/><br>
+            <img src="/ATM/Views/Deposits/scannedcheck.jpg"/><br>
             (Please note that this is an example check.)<br>
             You deposited: <s:property value="getText('{0,number,currency}', {depositcheckamt})"/>
             <s:form method="link">
                 <s:submit value="Yes" formaction="Deposit"/>
-                <s:submit value="No" formaction="WrongAmount.jsp"/>
+                <s:submit value="No" formaction="/ATM/Views/Deposits/WrongAmount.jsp"/>
             </s:form>
         </div>
     </body>

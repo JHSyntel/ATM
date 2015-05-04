@@ -42,6 +42,9 @@ body {
         background-repeat: no-repeat;
         background-position: center;
         background-attachment: fixed;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif; 
+	font-size: 18px;
         
 }
 
@@ -108,7 +111,7 @@ button  {
 
 
 /* Headings */
-h1,h2,h3,h4,h5,h6 {
+h1{
 	font-family:Verdana, Geneva, sans-serif;
 		text-align: center;
                 font-size: 350%;
@@ -239,6 +242,8 @@ header
   background-color: #99C2CA;
   min-height: 200px;
   text-align: center;
+  margin-bottom: 10px;
+  
 
 }  
 

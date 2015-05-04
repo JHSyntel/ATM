@@ -5,16 +5,16 @@
 <struts>
     <constant name="struts.devMode" value="true" />
     <package name="com.syntelinc.BOK.ATM.auth.ChangePinNum" extends="struts-default">
-        
         <action name="ChangePin" 
             class="com.syntelinc.BOK.ATM.auth.ChangePinNum"
             method="execute">
             <interceptor-ref name="params"/>
             <interceptor-ref name="validation"/>
-            <interceptor-ref name="workflow"/>
+            <interceptor-ref name="workflow"/>      
             <result name="success">/Views/Auth/ChangePinSuccess.jsp</result>
-            <result name="input">ChangePin</result>
+            <result name="input">/Views/Auth/ChangePin.jsp</result>
             <result name="NOTAUTHED">/Views/Landing.jsp</result>
         </action>
+        
     </package>
 </struts>

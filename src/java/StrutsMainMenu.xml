@@ -63,14 +63,14 @@
             <result name="error">/Views/SplashScreen.jsp</result>
         </action>
         
-        <action name="PinChangeSelected" 
+        <action name="ChangePinSelected" 
               class="com.syntelinc.BOK.ATM.menupkg.PinChangeSelectedAction" 
               method="execute">
             
             <interceptor-ref name="params"/>
             <interceptor-ref name="validation"/>
             <interceptor-ref name="workflow"/>
-            <result name="success">/Views/ChangePin.jsp</result>
+            <result name="success">/Views/Auth/ChangePin.jsp</result>
             <result name="error">/Views/SplashScreen.jsp</result>
         </action>
         

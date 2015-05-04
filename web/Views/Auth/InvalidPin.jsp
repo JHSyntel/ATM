@@ -1,3 +1,16 @@
+<%@page import="com.syntelinc.BOK.ATM.auth.Authentication"%>
+<%
+    String ACTIONNAME = "InvalidPin";
+    int authStatus = Authentication.authCheck();
+    if(authStatus == -1) { %>
+        <jsp:forward page="/Views/Auth/NoSession.jsp"/> 
+<%  }
+    if(authStatus == 1) { %>
+    <jsp:forward page="/Views/Auth/NotAuthorized.jsp"/>
+<%  }  
+    System.out.println("authCheck at " + ACTIONNAME + " action is " + authStatus);
+%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
@@ -11,7 +24,7 @@
         <div>
             Please try again or see a teller for assistance.<br><br>
             <form method="link">
-                <input type="submit" value="Try Again" formaction="EnterPin"/>
+                <input type="submit" value="Try Again" formaction="SwipeCard"/>
                 <input type="submit" value="Quit" formaction="ATM/Views/Landing.jsp"/>
             </form>
         </div>

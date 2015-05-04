@@ -66,7 +66,7 @@
                 </tr>
             </table>
             <form method="link">
-                <input type="submit" value="Back" formaction="/ATM/Views/SelectAccount.jsp">
+                <input type="submit" value="Cancel" formaction="/ATM/Views/MainMenu.jsp">
             </form>
         </div>
     </body>

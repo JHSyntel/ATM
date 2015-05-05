@@ -41,4 +41,17 @@ public class Hibernate {
         sl.addAll(cl);
         return sl;
     }
+    
+    public String checkAccountType(String accountID) {
+        q = session.createQuery("from Savingacct where accountid = :account");
+        int id = Integer.parseInt(accountID);
+        q.setParameter("account", id);
+        List sl = q.list();
+        if(sl.isEmpty()) {
+            return "checking";
+        }
+        else {
+            return "savings";
+        }
+    }
 }

@@ -30,7 +30,7 @@
             Would you like to perform another transaction?<br>
             <form method="link">
                 <input type="submit" value="Yes" formaction="/ATM/Views/MainMenu.jsp"/>
-                <input type="submit" value="No" formaction="/ATM/Views/SplashScreen.jsp"/>
+                <input type="submit" value="No" formaction="SignoutAct"/>
             </form>
         </div>
     </body>

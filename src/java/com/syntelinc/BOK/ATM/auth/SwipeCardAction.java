@@ -39,7 +39,7 @@ public class SwipeCardAction extends ActionSupport implements SessionAware {
     public void validate()
     {
         if(!Authentication.validID(Integer.toString(cardNumber)))
-            addActionError("Invalid card number format");
+            addActionError("Invalid card number format. Must be 5 digits long and cannot begin with 0.");
         if(!Authentication.userExists(Integer.toString(cardNumber)))
             addActionError("User does not exist");
     }

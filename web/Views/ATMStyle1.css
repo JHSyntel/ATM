@@ -78,38 +78,63 @@ button  {
 	background-color: #D1D0CE} /* button gray */
 
 /* circle ATM Number Keypad Buttons */
-#keypad {margin:auto; margin-top:20px;}
+button.edit
+{
+        text-align: center; 
+	border-radius: 10%;
+        -moz-border-radius: 10%;
+        -webkit-border-radius: 10%;
+        font-size:100%; 
+        font-weight:bold;
+        padding:5px;
+        cursor:pointer; 
+        background-color:#666666; 
+        color:#CCCCCC;
+}
 
-#keypad.button 
+table#keypad 
+{
+    width: 20%;
+    margin: auto;
+    margin-top: 25px;
+}
+
+keypad {margin:auto; margin-top:20px;}
+
+button.keypad
 {
         display: block;
         text-align: center; 
-	width: 5%;
-	height: 5%;
-        margin-right: auto;
-        margin-left: auto;
+	width: 50px;
+	height: 50px;
+        margin: 10px;
+        margin-left: 30px;
 	border-radius: 50%;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
         font-size:100%; 
         font-weight:bold; 
-        padding: 27px;
+        padding: 30px;
         cursor:pointer; 
         background-color:#666666; 
         color:#CCCCCC; 
 }
-#keypad.button:hover {background-color:#999889; color:#FFFF00;}
+button.keypad:hover {background-color:#999889; color:#FFFF00;}
 
-#keypad.btnOkay   
+button#btnOkay   
 { 
 	font-family: Arial, Helvetica, sans-serif; 
+        width: 50px;
+	height: 50px;
 	background-color: #4CC417;
 
 } /* Green to indicate "go" */
 
-#keypad.btnCancel 
+button#btnCancel 
 { 
 	font-family: Arial, Helvetica, sans-serif; 
+        width: 50px;
+	height: 50px;
 	background-color: #FF0000;
 
 } /* Red to indicate "cancel" */

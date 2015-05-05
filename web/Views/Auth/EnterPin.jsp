@@ -9,10 +9,10 @@
     String ACTIONNAME = "EnterPin";
     int authStatus = Authentication.authCheck();
     if(authStatus == -1) { %>
-        <jsp:forward page="/ATM/Auth/NoSession.jsp"/> 
+        <jsp:forward page="/Views/Auth/NoSession.jsp"/> 
 <%  }
     if(authStatus == 0) { %>
-        <jsp:forward page="/ATMS/Views/Auth/NotAuthorized.jsp"/>
+        <jsp:forward page="/Views/Auth/NotAuthorized.jsp"/>
 <%  }  
     System.out.println("authCheck at " + ACTIONNAME + " action is " + authStatus);
 %>
@@ -22,7 +22,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="ATMStyle1.css">
+        <link rel="stylesheet" type="text/css" href="/ATM/Views/ATMStyle1.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Bank of Kyle ATM</title>
         <script type="text/javascript">
@@ -71,13 +71,11 @@
                     <td onclick="addCode('9');"><button type="button" class="keypad">9</button></td>
                 </tr>
                 <tr>
-                    <td><button formaction="/ATM/Views/SplashScreen.jsp" id="btnCancel">Cancel</button></td>
-                    <td onclick="addCode('*');"><button type="button" class="keypad">0</button></td>
-                    <td><button id="btnOkay">OK</button></td>
-                    <td></td>
+                    <td><button formaction="/ATM/Views/SplashScreen.jsp" class="keypad" id="btnCancel">Cancel</button></td>
+                    <td onclick="addCode('0');"><button type="button" class="keypad">0</button></td>
+                    <td><button id="btnOkay" class="keypad">OK</button></td>
                 </tr>
             </table>
-          
         </s:form>
     </body>
     <footer></footer>

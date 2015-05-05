@@ -57,6 +57,16 @@ public class Hibernate {
         List<Userdetails> sl = q.list();
         return pinNumber == sl.get(0).getPinnum();
     }
+    
+    public void setNewPinNumber(int userID, int pinNumber) {
+        tran = session.beginTransaction();
+        q = session.createQuery("update Userdetails u set u.pinnum = :newNum where u.userid = :user");
+        q.setParameter("user", userID);
+        q.setParameter("newNum", pinNumber);
+        q.executeUpdate();
+        tran.commit();
+        session.close();
+    }
 
     public String checkAccountType(String accountID) {
         q = session.createQuery("from Savingacct where accountid = :account");

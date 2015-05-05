@@ -14,7 +14,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="ATMStyle1.css">
+        <link rel="stylesheet" type="text/css" href="/ATM/Views/ATMStyle1.css">
         <title>Bank of Kyle ATM</title>
     </head>
     <body>

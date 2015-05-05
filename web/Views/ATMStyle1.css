@@ -52,12 +52,17 @@ body {
 input[type = submit]
  { font-family: Arial, Helvetica, sans-serif; 
    margin-top: 20px;
-   background-color: #D1D0CE;
+   background-color: #B2D1D7;
    margin-left: auto;
    margin-right: auto;
    display: block;
    font-size: 125%;
-} /* button gray */
+   width: 400px;
+   padding: 20px 20px;
+   border:0 none;
+   -webkit-border-radius: 20px;
+   border-radius: 20px;
+} 
 
 input,
 select,
@@ -114,7 +119,7 @@ button  {
 h1{
 	font-family:Verdana, Geneva, sans-serif;
 		text-align: center;
-                font-size: 350%;
+                font-size: 250%;
                 font-weight: bold;
                 background: #99C2CA;
                 background-size: contain 10%;

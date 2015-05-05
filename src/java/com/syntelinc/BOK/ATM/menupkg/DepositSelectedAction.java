@@ -27,8 +27,9 @@ public class DepositSelectedAction extends ActionSupport implements SessionAware
         userSession.put("menuSelection", "deposit");
         
         Hibernate hib = new Hibernate();
-        //this.accountList = hib.selectAccounts(userSession.get("userid"));
-        this.accountList = hib.selectAccounts(0);
+        String userID = (String)userSession.get("userid");
+        this.accountList = hib.selectAccounts(Integer.parseInt(userID));
+//        this.accountList = hib.selectAccounts(0);
         ActionContext.getContext().getValueStack().push(accountList);
         
         return SUCCESS;

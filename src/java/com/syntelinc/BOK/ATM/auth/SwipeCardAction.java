@@ -38,10 +38,10 @@ public class SwipeCardAction extends ActionSupport implements SessionAware {
     @Override
     public void validate()
     {
-        if(!Authentication.validID(cardNumber))
-            addActionError("User not valid");
-        if(!"55555".equals(Integer.toString(cardNumber)))
+        if(!Authentication.validID(Integer.toString(cardNumber)))
             addActionError("Invalid card number format");
+        if(!Authentication.userExists(Integer.toString(cardNumber)))
+            addActionError("User does not exist");
     }
     
     @Override
@@ -50,6 +50,8 @@ public class SwipeCardAction extends ActionSupport implements SessionAware {
         userSession = getSession();
         userSession.put("authenticated", Boolean.TRUE);
         System.out.println("SwipeCardAction - Authenticated: " + userSession.get("authenticated"));
+        //cardNumber and userID are equivalent terms
+        Authentication.storeUserID(Integer.toString(cardNumber));
         return SUCCESS;
     }
 

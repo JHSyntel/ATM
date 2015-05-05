@@ -16,15 +16,10 @@
         <header><h1>Main Menu</h1></header>
         <form>
             <input type="submit" value="Withdraw" formaction="WithdrawSelected"/>
-            <br><br>
             <input type="submit" value="Deposit" formaction="DepositSelected"/>
-            <br><br>
             <input type="submit" value="View Summary" formaction="SummarySelected"/>
-            <br><br>
             <input type="submit" value="Print Mini Statement" formaction="StatementSelected"/>
-            <br><br>
             <input type="submit" value="Change Pin" formaction="ChangePinSelected"/>
-            <br><br><br><br>
             <input type="submit" value="Logout" formaction="SignoutAct"/>
         </form>
     </body>

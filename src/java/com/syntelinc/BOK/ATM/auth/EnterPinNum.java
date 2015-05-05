@@ -37,7 +37,9 @@ public class EnterPinNum extends ActionSupport implements SessionAware{
     @Override
     public void validate()
     {
-        if(!"55555".equals(Integer.toString(pinNumber)))
+        if(!Authentication.pinIsCorrect(Authentication.getUserIDfromSession(), pinNumber))
+            addActionError("Card not valid.");
+        if(!Authentication.validPin(pinNumber))
             addActionError("Card not valid.");
     }
     

@@ -39,16 +39,13 @@ public class ChangePinNum extends ActionSupport implements SessionAware{
     @Override
     public void validate()
     {    
-//        userSession = getSession();
-//        try {
-//            if(!Authentication.sessionActive((boolean) userSession.get("authenticated")))
-//                userSession.put("authenticated", false);
-//        } catch (NullPointerException e) {
-//            System.out.println("Null detected, redirect");
-//            userSession.put("authenticated", false);
-//            this.execute();
-//        }
-        if(Authentication.pinIsCorrect(currentPinNumber))
+        userSession = getSession();
+        if(!userSession.containsKey("userid")) {
+            addActionError("User session not active");
+            return;
+        }
+        String userID = (String) userSession.get("userid");
+        if(Authentication.pinIsCorrect(userID, currentPinNumber))
             addActionError("Pin not valid.");
         if(!Authentication.pinFieldsAreEqual(newPinNumber, confirmNewPinNumber))
             addActionError("Pin fields are not equal.");

@@ -16,14 +16,12 @@
     <body>
         <header><h1>Select Account</h1></header>
         <s:form action="SelectAccount">
-   
             <s:iterator>
                 <s:submit value="%{accountid}" name="accountid"/>
-                <br><br>
             </s:iterator>
-                
-            <br><br><br>
-            <s:submit value="Cancel" name="cancel"/>
+        </s:form>
+        <s:form method="link">
+            <s:submit value="Cancel" name="cancel" formaction="/ATM/Views/MainMenu.jsp"/>
         </s:form>
             
     </body>

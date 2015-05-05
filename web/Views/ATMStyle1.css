@@ -42,6 +42,9 @@ body {
         background-repeat: no-repeat;
         background-position: center;
         background-attachment: fixed;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif; 
+	font-size: 18px;
         
 }
 
@@ -49,12 +52,17 @@ body {
 input[type = submit]
  { font-family: Arial, Helvetica, sans-serif; 
    margin-top: 20px;
-   background-color: #D1D0CE;
+   background-color: #B2D1D7;
    margin-left: auto;
    margin-right: auto;
    display: block;
-
-} /* button gray */
+   font-size: 125%;
+   width: 400px;
+   padding: 20px 20px;
+   border:0 none;
+   -webkit-border-radius: 20px;
+   border-radius: 20px;
+} 
 
 input,
 select,
@@ -72,7 +80,7 @@ button  {
 /* circle ATM Number Keypad Buttons */
 #keypad {margin:auto; margin-top:20px;}
 
-#keypad input [type = button] 
+#keypad.button 
 {
         display: block;
         text-align: center; 
@@ -90,7 +98,7 @@ button  {
         background-color:#666666; 
         color:#CCCCCC; 
 }
-#keypad input:hover {background-color:#999889; color:#FFFF00;}
+#keypad.button:hover {background-color:#999889; color:#FFFF00;}
 
 #keypad.btnOkay   
 { 
@@ -108,10 +116,10 @@ button  {
 
 
 /* Headings */
-h1,h2,h3,h4,h5,h6 {
+h1{
 	font-family:Verdana, Geneva, sans-serif;
 		text-align: center;
-                font-size: 350%;
+                font-size: 250%;
                 font-weight: bold;
                 background: #99C2CA;
                 background-size: contain 10%;
@@ -239,7 +247,8 @@ header
   background-color: #99C2CA;
   min-height: 200px;
   text-align: center;
-
+  margin-bottom: 10px;
+  
 }  
 
 

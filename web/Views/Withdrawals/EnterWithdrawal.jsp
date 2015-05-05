@@ -41,30 +41,30 @@
 
             <s:form action="withdraw">
                 <s:textfield name="withdrawamt" size="10" readonly="true"/>
-            </s:form>
             
-            <table id="keypad" cellpadding="5" cellspacing="3">
-                <tr>
-                    <td onclick="addCode('1');">1</td>
-                    <td onclick="addCode('2');">2</td>
-                    <td onclick="addCode('3');">3</td>
-                </tr>
-                <tr>
-                    <td onclick="addCode('4');">4</td>
-                    <td onclick="addCode('5');">5</td>
-                    <td onclick="addCode('6');">6</td>
-                </tr>
-                <tr>
-                    <td onclick="addCode('7');">7</td>
-                    <td onclick="addCode('8');">8</td>
-                    <td onclick="addCode('9');">9</td>
-                </tr>
-                <tr>
-                    <td onclick="addCode('Delete');">Delete</td>
-                    <td onclick="addCode('0');">0</td>
-                    <td onclick="submitForm();">OK</td>
-                </tr>
-            </table>
+                <table id="keypad" cellpadding="5" cellspacing="3">
+                    <tr>
+                        <td onclick="addCode('1');"><button type="button" class="keypad">1</button></td>
+                        <td onclick="addCode('2');"><button type="button" class="keypad">2</button></td>
+                        <td onclick="addCode('3');"><button type="button" class="keypad">3</button></td>
+                    </tr>
+                    <tr>
+                        <td onclick="addCode('4');"><button type="button" class="keypad">4</button></td>
+                        <td onclick="addCode('5');"><button type="button" class="keypad">5</button></td>
+                        <td onclick="addCode('6');"><button type="button" class="keypad">6</button></td>
+                    </tr>
+                    <tr>
+                        <td onclick="addCode('7');"><button type="button" class="keypad">7</button></td>
+                        <td onclick="addCode('8');"><button type="button" class="keypad">8</button></td>
+                        <td onclick="addCode('9');"><button type="button" class="keypad">9</button></td>
+                    </tr>
+                    <tr>
+                        <td onclick="addCode('Delete');"><button type="button" class="keypad">Delete</button></td>
+                        <td onclick="addCode('0');"><button type="button" class="keypad">0</button></td>
+                        <td onclick="submitForm();"><button type="button" class="keypad">OK</button></td>
+                    </tr>
+                </table>
+            </s:form>
             <form method="link">
                 <input type="submit" value="Cancel" formaction="/ATM/Views/MainMenu.jsp">
             </form>

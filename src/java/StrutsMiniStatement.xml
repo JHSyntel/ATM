@@ -7,11 +7,10 @@
 <struts>
     <!-- Add your configuration elements here -->
     <constant name="struts.devMode" value="true"/>
-    <package name="in.syntel.BOK.ATM.ministatement" extends="struts.default">
+    <package name="com.syntelinc.BOK.ATM.ministatement" extends="struts-default">
         <action name="checkdate" 
-                class="in.syntel.BOK.ATM.ministatement.MiniStatement"
+                class="com.syntelinc.BOK.ATM.ministatement.MiniStatement"
                 method="execute">
-            <result name="input">Views/ViewStatement/SelectRange.jsp</result>
             <result name="success">Views/ViewStatement/ViewStatement</result>
         </action>
     </package>

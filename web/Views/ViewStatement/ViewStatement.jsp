@@ -1,8 +1,8 @@
-<%-- 
+<!-- 
     Document   : ViewStatement
     Created on : Apr 30, 2015, 11:58:37 AM
     Author     : NN5024428
---%>
+-->
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags" %>
@@ -18,7 +18,9 @@
         <header><h1>Statement Details:</h1></header>
         <form>
             <table>
-                
+                <thead>
+                    
+                </thead>
             </table>
         </form>
     </body>

@@ -19,7 +19,7 @@ import org.apache.struts2.interceptor.SessionAware;
 public class ScanCheckAct extends ActionSupport implements SessionAware
 {
     private SessionMap<String, Object> sessionMap;
-    private float depositcheckamt;
+    private double depositcheckamt;
     
     public ScanCheckAct()
     {
@@ -31,14 +31,14 @@ public class ScanCheckAct extends ActionSupport implements SessionAware
     {
         if (depositcheckamt <= 0)
             addActionError("Amount must be numerical value greater than zero.");
+        if (depositcheckamt > 1000000)
+            addActionError("Our ATM cannot handle deposits of more than one million dollars. Please see a teller.");
     }
     
     @Override
     public String execute()
     {
         sessionMap = (SessionMap)ActionContext.getContext().getSession();
-        //TEST CODE - REMOVE AFTER INTEGRATION WITH ACCOUNT SELECTION
-        sessionMap.put("accounttype", "checking");
         
         sessionMap.put("depositamt", Double.toString(depositcheckamt));
         sessionMap.put("withdrawamt", Integer.toString(0));
@@ -50,14 +50,14 @@ public class ScanCheckAct extends ActionSupport implements SessionAware
     /**
      * @return the depositcheckamt
      */
-    public float getDepositcheckamt() {
+    public double getDepositcheckamt() {
         return depositcheckamt;
     }
 
     /**
      * @param depositcheckamt the depositcheckamt to set
      */
-    public void setDepositcheckamt(float depositcheckamt) {
+    public void setDepositcheckamt(double depositcheckamt) {
         this.depositcheckamt = depositcheckamt;
     }
 

@@ -46,6 +46,9 @@ public class SelectAccountAction extends ActionSupport implements SessionAware, 
         }
         else{
             userSession.put("accountid", accountid);
+            Hibernate hib = new Hibernate();
+            userSession.put("accounttype", hib.checkAccountType(accountid));
+            System.out.println(userSession.get("accounttype"));
             return userSession.get("menuSelection").toString();
         }
     }

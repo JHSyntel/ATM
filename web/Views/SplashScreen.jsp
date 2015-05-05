@@ -15,7 +15,7 @@
     <body>
         <header><h1>Welcome to Bank of Kyle's ATM service!</h1></header>
         <form method="link">
-            <input type="submit" value ="START" formaction="SwipeCard"/>
+            <input type="submit" value ="START" formaction="/ATM/Views/Auth/SwipeCard.jsp"/>
         </form>
         <footer></footer>
     </body>

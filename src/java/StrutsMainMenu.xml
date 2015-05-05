@@ -94,7 +94,7 @@
             <interceptor-ref name="workflow"/>
             <result name="withdraw">/Views/Withdrawals/EnterWithdrawal.jsp</result>
             <result name="deposit">/Views/Deposits/SelectDepositType.jsp</result>
-            <result name="viewSummary">/Views/ViewSummary.jsp</result>
+            <result name="viewSummary">/Views/ViewStatement/ViewStatement.jsp</result>
             <result name="printStatement">/Views/PrintStatement.jsp</result>
             <result name="noMenuSelection">/Views/SplashScreen.jsp</result>
             <result name="cancel">/Views/MainMenu.jsp</result>

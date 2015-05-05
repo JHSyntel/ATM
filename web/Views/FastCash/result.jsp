@@ -12,6 +12,6 @@
         <title>ATM</title>
     </head>
     <body>
-        <h1></h1>
+        <h1>Processing...</h1>
     </body>
 </html>

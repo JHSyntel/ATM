@@ -52,7 +52,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <s:submit value="Cancel" formaction="../../index.jsp"/>
+                        <s:submit value="Cancel" formaction="result"/>
                     </td>
                 </tr>
             </table>

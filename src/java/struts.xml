@@ -11,6 +11,8 @@
     <include file="StrutsEnterPin.xml"/>
     <include file="StrutsChangePin.xml"/>
     <include file="StrutsSignout.xml"/>
+    <include file="StrutsMiniStatement.xml"/>
+    <include file="StrutsFastCash.xml"/>
     <!-- Configuration for the default package. -->
     <package name="default" extends="struts-default">
     </package>

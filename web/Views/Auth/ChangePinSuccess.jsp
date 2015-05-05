@@ -5,7 +5,7 @@
     if(authStatus == -1) { %>
         <jsp:forward page="/Views/Auth/NoSession.jsp"/> 
 <%  }
-    if(authStatus == 1) { %>
+    if(authStatus == 0) { %>
     <jsp:forward page="/Views/Auth/NotAuthorized.jsp"/>
 <%  }  
     System.out.println("authCheck at " + ACTIONNAME + " action is " + authStatus);
@@ -16,7 +16,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="/ATM/Views/ATMStyle1.css">
+        <link rel="stylesheet" type="text/css" href="ATMStyle1.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Bank of Kyle ATM</title>
     </head>
@@ -26,7 +26,7 @@
             Please select an option.<br><br>
             <form method="link">
                 <input type="submit" value="Return to Main Menu" formaction="/ATM/Views/MainMenu.jsp"/>
-                <input type="submit" value="Quit" formaction="ATM/Views/Landing.jsp"/>
+                <input type="submit" value="Quit" formaction="SignoutAct"/>
             </form>
         </div>
     </body>

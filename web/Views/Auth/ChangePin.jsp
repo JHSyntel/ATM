@@ -66,23 +66,26 @@
             }
         </script>
     </head>
-    <body onload="emptyCode()">
+    <body onload="emptyCode(); switchToCurrentPinField();">
         <header><h1>Please swipe your card (input card number)</h1></header>
         <s:form>
             <s:if test="hasActionErrors()">
                 <s:actionerror/>
             </s:if>
-            <s:label>Current Pin #</s:label>
-            <s:textfield type="password" name="currentPinNumber" class='formField'/>
-            <button onclick="switchToCurrentPinField()" type="button" class="edit">Edit</button>
-            <br>
-            <s:label>New Pin #</s:label>
-            <s:textfield type="password" name="newPinNumber" class='formField'/>
-            <button onclick="switchToNewPinField()" type="button" class="edit">Edit</button>
-            <br>
-            <s:label>Confirm New Pin #</s:label>
-            <s:textfield type="password" name="confirmNewPinNumber" class='formField'/>
-            <button onclick="switchToCornfirmNewPinField()" type="button" class="edit">Edit</button>
+        <table id="changePin">
+            <tr class="changePinRow">
+                <td class="changePinLabel"><s:label>Current Pin #</s:label></td>
+                <td class="changePinField"><s:textfield cssClass="changePinField" onclick="switchToCurrentPinField()" type="password" name="currentPinNumber" class='formField'/></td>
+            </tr>
+            <tr class="changePinRow">
+                <td class="changePinLabel"><s:label>New Pin #</s:label></td>
+                <td class="changePinField"><s:textfield cssClass="changePinField" onclick="switchToNewPinField()" type="password" name="newPinNumber" class='formField'/></td>
+            </tr>
+            <tr class="changePinRow">
+                <td class="changePinLabel"><s:label>Confirm New Pin #</s:label></td>
+                <td class="changePinField"><s:textfield cssClass="changePinField" onclick="switchToCornfirmNewPinField()" type="password" name="confirmNewPinNumber" class='formField'/></td>
+            </tr>
+        </table>
             <table id="keypad" cellpadding="5" cellspacing="3">
                 <tr>
                     <td onclick="addCode('1');"><button type="button" class="keypad">1</button></td>
@@ -105,7 +108,7 @@
                     <td><button id="btnOkay" class="keypad" formaction="ChangePin">OK</button></td>
                 </tr>
             </table>
-            <button formaction="/ATM/Views/MainMenu.jsp">Return to Main Menu</button>
+            <button formaction="/ATM/Views/MainMenu.jsp" id="returnToMain">Return to Main Menu</button>
             <br>
         </s:form>
         <footer></footer>

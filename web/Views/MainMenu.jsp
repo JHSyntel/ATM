@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="/ATM/Views/ATMStyle1.css">
+        <link rel="stylesheet" type="text/css" href="ATMStyle1.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Bank of Kyle ATM</title>
     </head>
@@ -25,7 +25,7 @@
             <br><br>
             <input type="submit" value="Change Pin" formaction="ChangePinSelected"/>
             <br><br><br><br>
-            <input type="submit" value="Logout" formaction="LogoutSelected"/>
+            <input type="submit" value="Logout" formaction="SignoutAct"/>
         </form>
     </body>
     <footer></footer>

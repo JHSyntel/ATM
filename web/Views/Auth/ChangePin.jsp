@@ -22,28 +22,95 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="ATMStyle1.css">
+        <link rel="stylesheet" type="text/css" href="/ATM/Views/ATMStyle1.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Bank of Kyle ATM</title>
+        <script type="text/javascript">
+            var code = document.forms[0].currentPinNumber;
+            function switchToCurrentPinField() {
+                code = document.forms[0].currentPinNumber;
+                code.style.border = "3px solid #0000FF";
+                document.forms[0].newPinNumber.style.border = "2px solid #DDDDDD";
+                document.forms[0].confirmNewPinNumber.style.border = "2px solid #DDDDDD";
+            }
+            function switchToNewPinField() {
+                code = document.forms[0].newPinNumber;
+                code.style.border = "3px solid #0000FF";
+                document.forms[0].currentPinNumber.style.border = "2px solid #DDDDDD";
+                document.forms[0].confirmNewPinNumber.style.border = "2px solid #DDDDDD";
+            }
+            function switchToCornfirmNewPinField() {
+                code = document.forms[0].confirmNewPinNumber;
+                code.style.border = "3px solid #0000FF";
+                document.forms[0].currentPinNumber.style.border = "2px solid #DDDDDD";;
+                document.forms[0].newPinNumber.style.border = "2px solid #DDDDDD";
+            }
+            function addCode(key){
+                    if(code.value.length < 5){
+                            code.value = code.value + key;
+                    }
+            }
+
+            function submitForm(){
+                    document.forms[0].submit();
+            }
+
+            function emptyCode(){
+                    document.forms[0].currentPinNumber.value = '';
+                    document.forms[0].newPinNumber.value = '';
+                    document.forms[0].confirmNewPinNumber.value = '';
+            }
+
+            function nextPage(){
+                    window.location.replace("http://localhost:8084/ATM/index.html");
+            }
+        </script>
     </head>
-    <body>
-        <header><h1>Please swipe (input card number) your card.</h1></header>
+    <body onload="emptyCode(); switchToCurrentPinField();">
+        <header><h1>Please swipe your card (input card number)</h1></header>
         <s:form>
             <s:if test="hasActionErrors()">
                 <s:actionerror/>
             </s:if>
-            <s:label>Confirm Current Pin #</s:label>
-            <s:textfield name="currentPinNumber"/>
+        <table id="changePin">
+            <tr class="changePinRow">
+                <td class="changePinLabel"><s:label>Current Pin #</s:label></td>
+                <td class="changePinField"><s:textfield cssClass="changePinField" onclick="switchToCurrentPinField()" type="password" name="currentPinNumber" class='formField'/></td>
+            </tr>
+            <tr class="changePinRow">
+                <td class="changePinLabel"><s:label>New Pin #</s:label></td>
+                <td class="changePinField"><s:textfield cssClass="changePinField" onclick="switchToNewPinField()" type="password" name="newPinNumber" class='formField'/></td>
+            </tr>
+            <tr class="changePinRow">
+                <td class="changePinLabel"><s:label>Confirm New Pin #</s:label></td>
+                <td class="changePinField"><s:textfield cssClass="changePinField" onclick="switchToCornfirmNewPinField()" type="password" name="confirmNewPinNumber" class='formField'/></td>
+            </tr>
+        </table>
+            <table id="keypad" cellpadding="5" cellspacing="3">
+                <tr>
+                    <td onclick="addCode('1');"><button type="button" class="keypad">1</button></td>
+                    <td onclick="addCode('2');"><button type="button" class="keypad">2</button></td>
+                    <td onclick="addCode('3');"><button type="button" class="keypad">3</button></td>
+                </tr>
+                <tr>
+                    <td onclick="addCode('4');"><button type="button" class="keypad">4</button></td>
+                    <td onclick="addCode('5');"><button type="button" class="keypad">5</button></td>
+                    <td onclick="addCode('6');"><button type="button" class="keypad">6</button></td>
+                </tr>
+                <tr>
+                    <td onclick="addCode('7');"><button type="button" class="keypad">7</button></td>
+                    <td onclick="addCode('8');"><button type="button" class="keypad">8</button></td>
+                    <td onclick="addCode('9');"><button type="button" class="keypad">9</button></td>
+                </tr>
+                <tr>
+                    <td><button class="keypad" id="btnCancel">Cancel</button></td>
+                    <td onclick="addCode(0);"><button type="button" class="keypad">0</button></td>
+                    <td><button id="btnOkay" class="keypad" formaction="ChangePin">OK</button></td>
+                </tr>
+            </table>
+            <button formaction="/ATM/Views/MainMenu.jsp" id="returnToMain">Return to Main Menu</button>
             <br>
-            <s:label>New Pin #</s:label>
-            <s:textfield name="newPinNumber"/>
-            <br>
-            <s:label>Confirm New Pin #</s:label>
-            <s:textfield name="confirmNewPinNumber"/>
-            <br>
-            <s:submit value="Change Pin" formaction="ChangePin"/>
-            <s:submit value="Cancel" formaction="/ATM/Views/MainMenu.jsp"/>
         </s:form>
+        <footer></footer>
     </body>
-    <footer></footer>
 </html>

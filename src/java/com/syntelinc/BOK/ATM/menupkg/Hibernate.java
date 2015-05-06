@@ -46,6 +46,23 @@ public class Hibernate {
         return sl;
     }
     
+    public List selectCheckingAccounts(int userID) {
+//        System.out.println(userID);
+        q = session.createQuery("from CheckingTransaction ct join Checkingacct ca on ca.userID = ct.userID "
+                + " where ca.userID = :user");
+        q.setParameter("user", userID);
+        List ccl = q.list();
+        return ccl;
+    }
+    
+    public List selectSavingsAccounts(int userID) {
+//        System.out.println(userID);
+        q = session.createQuery("from Savingacct where userID = :user");
+        q.setParameter("user", userID);
+        List ssl = q.list();
+        return ssl;
+    }
+    
     public boolean userExists(int userID) {
         q = session.createQuery("from Userdetails where userID = :user");
         q.setParameter("user", userID);

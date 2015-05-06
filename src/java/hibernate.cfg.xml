@@ -6,7 +6,7 @@
     <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
     <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:XE</property>
     <property name="hibernate.connection.username">system</property>
-    <property name="hibernate.connection.password">syntel123$</property>
+    <property name="hibernate.connection.password">tiger</property>
     <!--<property name="hibernate.hbm2ddl.auto">create</property>-->
     <property name="hibernate.show_sql">true</property>
     <mapping resource="SavingsTransaction.xml"/>

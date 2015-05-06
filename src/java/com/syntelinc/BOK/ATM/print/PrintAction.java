@@ -25,8 +25,10 @@ public class PrintAction extends ActionSupport implements SessionAware
     {
         userSession = ActionContext.getContext().getSession();
         Hibernate hib = new Hibernate();
-        List accountList = hib.selectAccounts(Integer.parseInt((String)userSession.get("userid")));
-        ActionContext.getContext().getValueStack().push(accountList);
+        List checkingAcctList = hib.selectCheckingAccounts(Integer.parseInt((String)userSession.get("userid")));
+        ActionContext.getContext().getValueStack().push(checkingAcctList);
+        List savingsAcctList = hib.selectSavingsAccounts(Integer.parseInt((String)userSession.get("userid")));
+        ActionContext.getContext().getValueStack().push(savingsAcctList);
         return "SUCCESS";
     }
 

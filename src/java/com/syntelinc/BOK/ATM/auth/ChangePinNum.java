@@ -8,6 +8,7 @@ package com.syntelinc.BOK.ATM.auth;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import com.syntelinc.BOK.ATM.menupkg.Hibernate;
 import java.util.Map;
 import org.apache.struts2.interceptor.SessionAware;
 
@@ -39,17 +40,14 @@ public class ChangePinNum extends ActionSupport implements SessionAware{
     @Override
     public void validate()
     {    
-//        userSession = getSession();
-//        try {
-//            if(!Authentication.sessionActive((boolean) userSession.get("authenticated")))
-//                userSession.put("authenticated", false);
-//        } catch (NullPointerException e) {
-//            System.out.println("Null detected, redirect");
-//            userSession.put("authenticated", false);
-//            this.execute();
-//        }
-        if(Authentication.pinIsCorrect(currentPinNumber))
-            addActionError("Pin not valid.");
+        userSession = getSession();
+        if(!userSession.containsKey("userid")) {
+            addActionError("User session not active");
+            return;
+        }
+        String userID = (String) userSession.get("userid");
+        if(!Authentication.pinIsCorrect(userID, currentPinNumber))
+            addActionError("Current Pin not correct.");
         if(!Authentication.pinFieldsAreEqual(newPinNumber, confirmNewPinNumber))
             addActionError("Pin fields are not equal.");
         if(!Authentication.validPin(newPinNumber))
@@ -64,10 +62,8 @@ public class ChangePinNum extends ActionSupport implements SessionAware{
     public String execute()
     {
         System.out.println(!(boolean)userSession.get("authenticated"));
-        if(!(boolean)userSession.get("authenticated")) {
-            System.out.println("REDIRECTED");
-            return "NOTAUTHED";
-        }
+        Hibernate h = new Hibernate();
+        h.setNewPinNumber(Integer.parseInt(Authentication.getUserIDfromSession()), newPinNumber);
         System.out.println("-----execute()-----------------------pinNumber is ");
         return SUCCESS;
     }

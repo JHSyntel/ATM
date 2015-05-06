@@ -7,17 +7,18 @@
 package com.syntelinc.BOK.ATM.auth;
 
 import com.opensymphony.xwork2.ActionContext;
+import com.syntelinc.BOK.ATM.menupkg.Hibernate;
 import java.util.Map;
-import java.util.Objects;
 
 /**
  *
  * @author JH5024430
  */
-public class Authentication {
+public class Authentication{
     
-    public static boolean pinIsCorrect(int pinNumber) {
-        return !"55555".equals(Integer.toString(pinNumber));
+    public static boolean pinIsCorrect(String userID, int pinNumber) {
+        Hibernate h = new Hibernate();
+        return h.comparePinForUser(Integer.valueOf(userID), pinNumber);
     }
     
     public static Map<String, Object> getSession() {
@@ -32,8 +33,13 @@ public class Authentication {
         return (pin > 9999 && pin < 100000);
     }
     
-    public static boolean validID(int id) {
-        return (id == 55555);
+    public static boolean userExists(String userID) {
+        Hibernate h = new Hibernate();
+        return h.userExists(Integer.valueOf(userID));
+    }
+    
+    public static boolean validID(String userID) {
+        return (Integer.valueOf(userID) > 9999 && Integer.valueOf(userID) < 100000);
     }
     
     public static boolean sessionActiveCheck() {
@@ -51,6 +57,16 @@ public class Authentication {
         
         //If session not found base case
         return false;
+    }
+    
+    public static void storeUserID(String userID) {
+        Map<String, Object> userSession = Authentication.getSession();
+        userSession.put("userid", userID);
+        System.out.println("**********1******** userID is " + userID + ", userSession.get(userID) is " + (String) userSession.get("userid)"));
+    }
+    
+    public static String getUserIDfromSession() {
+        return (String) Authentication.getSession().get("userid");
     }
     
     /**

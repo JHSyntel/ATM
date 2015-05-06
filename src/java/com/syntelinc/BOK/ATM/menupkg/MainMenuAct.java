@@ -37,7 +37,8 @@ public class MainMenuAct extends ActionSupport implements SessionAware, RequestA
     public String execute(){
         String result = "";
         userSession = this.getSession();
-                System.out.println("EXECUTE AFTER SETTING SESSION");
+        System.out.println(userSession.get("userid"));
+        System.out.println("EXECUTE AFTER SETTING SESSION");
 
         if(Withdraw) {
             userSession.put("menuSelection", "withdraw");
@@ -66,8 +67,8 @@ public class MainMenuAct extends ActionSupport implements SessionAware, RequestA
         }
         if(result.equals("chooseAccount")) {
             Hibernate hib = new Hibernate();
-            //this.accountList = hib.selectAccounts(userSession.get("userid"));
-            this.accountList = hib.selectAccounts(0);
+            this.accountList = hib.selectAccounts((int)userSession.get("userid"));
+            //this.accountList = hib.selectAccounts(0);
             System.out.println(accountList.get(0));
             ActionContext.getContext().getValueStack().push(accountList);
         }

@@ -1,10 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-package com.syntelinc.BOK.ATM.menupkg;
+package com.syntelinc.BOK.ATM.fastcash;
 
 import java.util.List;
 import org.hibernate.Query;
@@ -17,7 +11,7 @@ import org.hibernate.cfg.Configuration;
  *
  * @author KB5024427
  */
-public class Hibernate {
+public class HibernateFastCash {
     // Hibernate objects
     Configuration cfg;
     SessionFactory sf;
@@ -25,14 +19,13 @@ public class Hibernate {
     Transaction tran;
     Query q;
     
-    public Hibernate() {
+    public HibernateFastCash() {
         cfg  = new Configuration().configure();
         sf = cfg.buildSessionFactory();
         session = sf.openSession();
     }
     
     public List selectAccounts(int userID) {
-        System.out.println(userID);
         q = session.createQuery("from Savingacct where userID = :user");
         q.setParameter("user", userID);
         List sl = q.list();
@@ -40,34 +33,9 @@ public class Hibernate {
         q.setParameter("user", userID);
         List cl = q.list();
         sl.addAll(cl);
-        System.out.println(sl.get(0));
         return sl;
     }
     
-    public boolean userExists(int userID) {
-        q = session.createQuery("from Userdetails where userID = :user");
-        q.setParameter("user", userID);
-        List sl = q.list();
-        return !sl.isEmpty();
-    }
-    
-    public boolean comparePinForUser(int userID, int pinNumber) {
-        q = session.createQuery("from Userdetails where userID = :user");
-        q.setParameter("user", userID);
-        List<Userdetails> sl = q.list();
-        return pinNumber == sl.get(0).getPinnum();
-    }
-    
-    public void setNewPinNumber(int userID, int pinNumber) {
-        tran = session.beginTransaction();
-        q = session.createQuery("update Userdetails u set u.pinnum = :newNum where u.userid = :user");
-        q.setParameter("user", userID);
-        q.setParameter("newNum", pinNumber);
-        q.executeUpdate();
-        tran.commit();
-        session.close();
-    }
-
     public String checkAccountType(String accountID) {
         q = session.createQuery("from Savingacct where accountid = :account");
         int id = Integer.parseInt(accountID);
@@ -81,3 +49,4 @@ public class Hibernate {
         }
     }
 }
+

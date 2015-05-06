@@ -14,8 +14,8 @@
     <mapping resource="com/syntelinc/BOK/ATM/menupkg/Checkingacct.hbm.xml"/>
     <mapping resource="com/syntelinc/BOK/ATM/menupkg/Savingacct.hbm.xml"/>
     <mapping resource="com/syntelinc/BOK/ATM/menupkg/Userdetails.hbm.xml"/>
-    <mapping resource="Branch.hbm.xml"/> 
-    <mapping resource="Administratordetails.hbm.xml"/> 
-    <mapping resource="Atm.hbm.xml"/> 
+    <mapping resource="Branch.hbm.xml"/>
+    <mapping resource="Administratordetails.hbm.xml"/>
+    <mapping resource="Atm.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

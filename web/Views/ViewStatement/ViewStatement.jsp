@@ -16,13 +16,41 @@
     </head>
     <body>
         <header><h1>Statement Details:</h1></header>
-        <form>
-            <table>
+            <table id="ministatment">
                 <thead>
-                    
+                <td>
+                    Balance
+                </td>
+                <td>
+                    Date
+                </td>
+                <td>
+                    Credit
+                </td>
+                <td>
+                    Debit
+                </td>
                 </thead>
+                <s:iterator>
+                    <tr>
+                        <td>
+                            <s:property value="%{balance}"></s:property>
+                        </td>
+                        <td>
+                            <s:property value="%{time}"></s:property>
+                        </td>
+                        <td>
+                            <s:property value="%{creditamt}"></s:property>
+                        </td>
+                        <td>
+                            <s:property value="%{debitamt}"></s:property>
+                        </td>
+                    </tr>
+                </s:iterator>
             </table>
-        </form>
+        <s:form method="link">
+            <s:submit formaction="/ATM/Views/MainMenu.jsp" value="Main Menu"/>
+        </s:form>
     </body>
     <footer></footer>
 </html>

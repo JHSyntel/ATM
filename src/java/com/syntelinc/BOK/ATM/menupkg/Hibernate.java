@@ -8,8 +8,10 @@ package com.syntelinc.BOK.ATM.menupkg;
 
 import com.syntelinc.BOK.ATM.transactionpkg.CheckingTransaction;
 import com.syntelinc.BOK.ATM.transactionpkg.SavingsTransaction;
+import java.math.BigDecimal;
 import java.util.List;
 import org.hibernate.Query;
+import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -48,8 +50,7 @@ public class Hibernate {
     
     public List selectCheckingAccounts(int userID) {
 //        System.out.println(userID);
-        q = session.createQuery("from CheckingTransaction ct join Checkingacct ca on ca.userID = ct.userID "
-                + " where ca.userID = :user");
+        q = session.createQuery("from Checkingacct where userid = :user");
         q.setParameter("user", userID);
         List ccl = q.list();
         return ccl;
@@ -57,7 +58,7 @@ public class Hibernate {
     
     public List selectSavingsAccounts(int userID) {
 //        System.out.println(userID);
-        q = session.createQuery("from Savingacct where userID = :user");
+        q = session.createQuery("from Savingacct where userid = :user");
         q.setParameter("user", userID);
         List ssl = q.list();
         return ssl;
@@ -119,7 +120,7 @@ public class Hibernate {
     public List getTransactions(int accountId, String accountType) {
         //System.out.println(userID);
         if(accountType.compareTo("checking") == 0) {
-            q = session.createQuery("from CheckingTransaction where acctid = :account").setMaxResults(10);
+            q = session.createQuery("from CheckingTransaction where acctid = :account order by transid desc").setMaxResults(20);
             q.setParameter("account", accountId);
             List cl = q.list();
             CheckingTransaction ct = (CheckingTransaction)cl.get(0);
@@ -127,7 +128,7 @@ public class Hibernate {
             return cl;
         }
         else {
-            q = session.createQuery("from SavingsTransaction where acctid = :account").setMaxResults(10);
+            q = session.createQuery("from SavingsTransaction where acctid = :account order by transid desc").setMaxResults(20);
             q.setParameter("account", accountId);
             List sl = q.list();
             SavingsTransaction st = (SavingsTransaction)sl.get(0);
@@ -136,5 +137,28 @@ public class Hibernate {
         }
     }
     
-    
+    public BigDecimal getBalance(int accountID, String accountType) {
+        SQLQuery q;
+        com.syntelinc.BOK.ATM.transactionpkg.Transaction transac;
+        if (accountType.equals("checking"))
+        {
+            transac = new CheckingTransaction();
+            q = session.createSQLQuery("select balance from checkingtrans where acctid=?");
+        }
+        else
+        {
+            transac = new SavingsTransaction();
+            q = session.createSQLQuery("select balance from savingstrans where acctid=?");
+        }
+        transac.setAcctid(accountID);
+        
+        q.setInteger(0, transac.getAcctid());
+        List ld = q.list();
+        BigDecimal bal;
+        if (ld.isEmpty())
+            bal = new BigDecimal(0);
+        else
+            bal = (BigDecimal)ld.get(ld.size()-1);
+        return bal;
+    }
 }

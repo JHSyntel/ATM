@@ -3,6 +3,7 @@ package com.syntelinc.BOK.ATM.print;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.syntelinc.BOK.ATM.menupkg.Hibernate;
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 import org.apache.struts2.interceptor.SessionAware;
@@ -14,7 +15,6 @@ import org.apache.struts2.interceptor.SessionAware;
 public class PrintAction extends ActionSupport implements SessionAware
 {
     private Map<String, Object> userSession;
-    
     public PrintAction() 
     {
         
@@ -29,7 +29,8 @@ public class PrintAction extends ActionSupport implements SessionAware
         ActionContext.getContext().getValueStack().push(checkingAcctList);
         List savingsAcctList = hib.selectSavingsAccounts(Integer.parseInt((String)userSession.get("userid")));
         ActionContext.getContext().getValueStack().push(savingsAcctList);
-        return "SUCCESS";
+//        BigDecimal bal = hib.getBalance(Integer.parseInt((String)userSession.get("acctid")), (String)userSession.get("accounttype"));
+        return SUCCESS;
     }
 
     @Override

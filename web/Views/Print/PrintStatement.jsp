@@ -14,15 +14,17 @@
         <title>ATM</title>
     </head>
     <body>
-        <h1>View Balance Summary:</h1>
-        <s:debug/>
-        <s:iterator>
-            <s:property value="%{accountid}"></s:property>
-        </s:iterator>
-        <% ActionContext.getContext().getValueStack().pop();%>
+        <header>
+            <h1>View Balance Summary:</h1>
+        </header>
         <s:iterator>
             <s:property value="%{accountid}"></s:property>
         </s:iterator>
 
+        <% ActionContext.getContext().getValueStack().pop();%>
+        <s:iterator>
+            <s:property value="%{accountid}"></s:property>
+        </s:iterator>
     </body>
+    <footer></footer>
 </html>

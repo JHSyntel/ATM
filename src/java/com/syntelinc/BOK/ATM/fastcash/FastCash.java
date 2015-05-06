@@ -31,8 +31,8 @@ public class FastCash extends ActionSupport  implements SessionAware
         userSession = ActionContext.getContext().getSession();
         Hibernate hib = new Hibernate();
         // needs to be changed from this hardcoded value
-        List l = hib.selectAccounts(0);
-        //List l = hib.selectAccounts((int)userSession.get("userid"));
+//        List l = hib.selectAccounts(0);
+        List l = hib.selectAccounts(Integer.parseInt((String)userSession.get("userid")));
         //CheckDailyLimit lmt = new CheckDailyLimit();
         Checkingacct checkingAccount = (Checkingacct)l.get(l.size()-1);
         //lmt.getCurrentTotal(checkingAccount.getAccountid());
@@ -86,14 +86,14 @@ public class FastCash extends ActionSupport  implements SessionAware
         userSession = ActionContext.getContext().getSession();
         Hibernate hib = new Hibernate();
         // needs to be changed from this hardcoded value
-        List l = hib.selectAccounts(0);
-        //List l = hib.selectAccounts((int)userSession.get("userid"));
+        //List l = hib.selectAccounts(0);
+        List l = hib.selectAccounts(Integer.parseInt((String)userSession.get("userid")));
         //CheckDailyLimit lmt = new CheckDailyLimit();
         Checkingacct checkingAccount = (Checkingacct)l.get(l.size()-1);
         //lmt.getCurrentTotal(checkingAccount.getAccountid());
         userSession.put("accountid", Integer.toString(checkingAccount.getAccountid()));
         
-        double withdrawamt = 0;
+        withdrawamt = 0;
                 System.out.println("fast cash" + withdrawamt);
         
         switch (amount)

@@ -13,6 +13,7 @@
     <include file="StrutsSignout.xml"/>
     <include file="StrutsMiniStatement.xml"/>
     <include file="StrutsFastCash.xml"/>
+    <include file="StrutsPrintSummary"/>
     <!-- Configuration for the default package. -->
     <package name="default" extends="struts-default">
     </package>

@@ -136,6 +136,7 @@ button.keypad, button#btnCancel, button#btnOkay
         -webkit-border-radius: 50%;
         font-size:100%; 
         font-weight:bold; 
+
         cursor:pointer; 
         background-color:#666666; 
         color:#CCCCCC; 
@@ -145,6 +146,8 @@ button.keypad:hover {background-color:#999889; color:#FFFF00;}
 button#btnOkay   
 { 
 	font-family: Arial, Helvetica, sans-serif; 
+        width: 50px;
+	height: 50px;
 	background-color: #4CC417;
 
 } /* Green to indicate "go" */
@@ -152,10 +155,33 @@ button#btnOkay
 button#btnCancel 
 { 
 	font-family: Arial, Helvetica, sans-serif; 
+        width: 50px;
+	height: 50px;
 	background-color: #FF0000;
 
 } /* Red to indicate "cancel" */
 
+/* ministatement receipt */
+table#ministatement
+{
+	background-color: #FFFFFF;
+	border: 1px solid black;
+	width: auto;      
+}
+
+th#ministatement
+{
+	background-color: #FFFFFF;
+	border: 1px solid black;
+	width: auto;
+}
+
+td#ministatement
+{
+	background-color: #FFFFFF;
+	border: 1px solid black;
+	width: auto;
+}
 
 /* Headings */
 h1{
@@ -311,4 +337,3 @@ footer
 {
     color: #000000;
 }
-

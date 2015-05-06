@@ -17,6 +17,7 @@ import org.apache.struts2.interceptor.SessionAware;
  */
 public class EnterPinNum extends ActionSupport implements SessionAware{
     private int pinNumber;
+    private String fastcash;
     
     private Map<String, Object> userSession;
 
@@ -50,6 +51,12 @@ public class EnterPinNum extends ActionSupport implements SessionAware{
     @Override
     public String execute()
     {
+        if(fastcash != null) {
+            if(fastcash.equals("Fast Cash")) {
+            return "fastcash";
+            }
+        }
+        
         System.out.println("-----execute()-----------------------pinNumber is " + pinNumber);
         return SUCCESS;
     }
@@ -61,5 +68,19 @@ public class EnterPinNum extends ActionSupport implements SessionAware{
     public void setPinNumber(int pinNumber) {
         System.out.println("-------setPinNumber()---------------------pinNumber is " + pinNumber);
         this.pinNumber = pinNumber;
+    }
+
+    /**
+     * @return the fastcash
+     */
+    public String getFastcash() {
+        return fastcash;
+    }
+
+    /**
+     * @param fastcash the fastcash to set
+     */
+    public void setFastcash(String fastcash) {
+        this.fastcash = fastcash;
     }
 }

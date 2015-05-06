@@ -64,27 +64,29 @@ public class HibernateTransaction implements SessionAware
             bal = (BigDecimal)ld.get(ld.size()-1);
         
         tran.setTime(new Date());
-        tran.setLocation((String)sessionMap.get("atmlocation"));
+        tran.setLocation("1234 North Vegas Street");
         DecimalFormat df = new DecimalFormat("#.##");
         df.setRoundingMode(RoundingMode.CEILING);
         tran.setDebitamt(Double.parseDouble((String)sessionMap.get("depositamt")));
         tran.setDebitamt(Double.parseDouble(df.format(tran.getDebitamt())));
         tran.setCreditamt(Double.parseDouble((String)sessionMap.get("withdrawamt")));
         tran.setCreditamt(Double.parseDouble(df.format(tran.getCreditamt())));
-        tran.setBalance(bal.doubleValue() + tran.getDebitamt() - tran.getCreditamt());
-        tran.setBalance(Double.parseDouble(df.format(tran.getBalance())));
-        sessionMap.put("balance", tran.getBalance());
         switch((String)sessionMap.get("type"))
         {
             case "cash":
                 tran.setType(1);
+                tran.setBalance(bal.doubleValue() + tran.getDebitamt() - tran.getCreditamt());
+                tran.setBalance(Double.parseDouble(df.format(tran.getBalance())));
                 break;
             case "check":
                 tran.setType(2);
+                tran.setBalance(bal.doubleValue());
+                tran.setBalance(Double.parseDouble(df.format(tran.getBalance())));
                 break;
             case "default":
                 throw new IllegalArgumentException();
         }
+        sessionMap.put("balance", tran.getBalance());
         
         s.save(tran);
         t.commit();

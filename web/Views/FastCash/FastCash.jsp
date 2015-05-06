@@ -16,6 +16,9 @@
     </head>
     <body>
         <h1>Select a Fast Cash Amount or select Other Transactions</h1>
+            <s:if test="hasActionErrors()">
+                <s:actionerror/>
+            </s:if>
         <s:form action="getAmount">
             <table>
                 <tr>

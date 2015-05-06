@@ -15,6 +15,7 @@
             <interceptor-ref name="defaultStack"/>
             <result name="input">/Views/Auth/InvalidPin.jsp</result>
             <result name="success">/Views/MainMenu.jsp</result>
+            <result name="fastcash">/Views/FastCash/FastCash.jsp</result>
             <result name="NOTAUTHED">/views/Landing.jsp</result>
         </action>
     </package>

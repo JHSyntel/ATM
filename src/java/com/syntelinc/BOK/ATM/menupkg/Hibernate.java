@@ -6,6 +6,8 @@
 
 package com.syntelinc.BOK.ATM.menupkg;
 
+import com.syntelinc.BOK.ATM.transactionpkg.CheckingTransaction;
+import com.syntelinc.BOK.ATM.transactionpkg.SavingsTransaction;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -44,6 +46,23 @@ public class Hibernate {
         return sl;
     }
     
+    public List selectCheckingAccounts(int userID) {
+//        System.out.println(userID);
+        q = session.createQuery("from CheckingTransaction ct join Checkingacct ca on ca.userID = ct.userID "
+                + " where ca.userID = :user");
+        q.setParameter("user", userID);
+        List ccl = q.list();
+        return ccl;
+    }
+    
+    public List selectSavingsAccounts(int userID) {
+//        System.out.println(userID);
+        q = session.createQuery("from Savingacct where userID = :user");
+        q.setParameter("user", userID);
+        List ssl = q.list();
+        return ssl;
+    }
+    
     public boolean userExists(int userID) {
         q = session.createQuery("from Userdetails where userID = :user");
         q.setParameter("user", userID);
@@ -67,7 +86,7 @@ public class Hibernate {
         tran.commit();
         session.close();
     }
-
+    
     public String checkAccountType(String accountID) {
         q = session.createQuery("from Savingacct where accountid = :account");
         int id = Integer.parseInt(accountID);
@@ -80,4 +99,42 @@ public class Hibernate {
             return "savings";
         }
     }
+    
+    public List getAccount(int userID, String accountType) {
+        //System.out.println(userID);
+        if(accountType.equals("checking")) {
+            q = session.createQuery("from Checkingacct where userID = :user");
+            q.setParameter("user", userID);
+            List cl = q.list();
+            return cl;
+        }
+        else {
+            q = session.createQuery("from Savingacct where userID = :user");
+            q.setParameter("user", userID);
+            List sl = q.list();
+            return sl;
+        }
+    }
+    
+    public List getTransactions(int accountId, String accountType) {
+        //System.out.println(userID);
+        if(accountType.compareTo("checking") == 0) {
+            q = session.createQuery("from CheckingTransaction where acctid = :account").setMaxResults(10);
+            q.setParameter("account", accountId);
+            List cl = q.list();
+            CheckingTransaction ct = (CheckingTransaction)cl.get(0);
+            System.out.println(ct.getTransid());
+            return cl;
+        }
+        else {
+            q = session.createQuery("from SavingsTransaction where acctid = :account").setMaxResults(10);
+            q.setParameter("account", accountId);
+            List sl = q.list();
+            SavingsTransaction st = (SavingsTransaction)sl.get(0);
+            System.out.println(st.getTransid());
+            return sl;
+        }
+    }
+    
+    
 }

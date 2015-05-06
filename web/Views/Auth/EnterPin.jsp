@@ -76,6 +76,7 @@
                     <td><button id="btnOkay" class="keypad">OK</button></td>
                 </tr>
             </table>
+                <s:submit value="Fast Cash" name="fastcash"/>
         </s:form>
     </body>
     <footer></footer>

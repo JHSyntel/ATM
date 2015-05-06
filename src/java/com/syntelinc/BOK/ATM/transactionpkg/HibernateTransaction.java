@@ -50,7 +50,7 @@ public class HibernateTransaction implements SessionAware
         else
         {
             tran = new SavingsTransaction();
-            q = s.createSQLQuery("select balance from savingstrans where acctid=?");
+            q = s.createSQLQuery("select balance from savingtrans where acctid=?");
         }
         
         tran.setAcctid(Integer.parseInt((String)sessionMap.get("accountid")));

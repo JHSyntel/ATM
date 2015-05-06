@@ -67,8 +67,8 @@ public class MiniStatement extends ActionSupport implements SessionAware {
         System.out.println("USER ID AS AN INTEGER:  "+uID+"  ACCOUNT TYPE:  "+aType);
         List transactionList = hib.getTransactions(uID, aType);
         ActionContext.getContext().getValueStack().push(transactionList);
-        CheckingTransaction tran = (CheckingTransaction)transactionList.get(0);
-        System.out.println("account id associated with this transaction objecT: "+tran.getAcctid());
+        //CheckingTransaction tran = (CheckingTransaction)transactionList.get(0);
+        //System.out.println("account id associated with this transaction objecT: "+tran.getAcctid());
         return SUCCESS;
     }
 

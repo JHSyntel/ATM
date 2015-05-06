@@ -15,7 +15,7 @@
         <link rel="stylesheet" type="text/css" href="/ATM/Views/ATMStyle1.css">
     </head>
     <body>
-        <h1>Select a Fast Cash Amount or select Other Transactions</h1>
+        <header> <h1>Select a Fast Cash Amount or select Other Transactions</h1></header>
             <s:if test="hasActionErrors()">
                 <s:actionerror/>
             </s:if>
@@ -63,4 +63,5 @@
         </s:form>
 
     </body>
+    <footer></footer>
 </html>

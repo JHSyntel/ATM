@@ -1,9 +1,10 @@
 <%-- 
     Document   : PrintStatement
     Created on : May 5, 2015, 12:15:27 PM
-    Author     : EH5024424
+    Author     : NN5024428
 --%>
 
+<%@page import="java.util.Map"%>
 <%@page import="com.opensymphony.xwork2.ActionContext"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags" %>
@@ -18,14 +19,31 @@
         <header>
             <h1>View Balance Summary:</h1>
         </header>
-        <s:iterator>
+            <!--<% ActionContext.getContext().getValueStack().pop();%>-->
+        <div>
+            <b>Account ID :</b>
             <s:property value="%{accountid}"></s:property>
-        </s:iterator>
+       
+        </div>
+        <div>
+            <b>Account Balance:</b>
+            <s:property value="%{balance}"></s:property>
+                
+           
+            <%! String balance=""; %>
+            <% 
+                Map<String, Object> userSession = ActionContext.getContext().getSession();
+                balance = (String) userSession.get("selectedaccountbalance");
+                System.out.println("balance: " + balance); %>
+        </div>
 
-        <% ActionContext.getContext().getValueStack().pop();%>
-        <s:iterator>
-            <s:property value="%{accountid}"></s:property>
-        </s:iterator>
+        <s:form method="link">
+            <s:submit formaction="/ATM/Views/MainMenu.jsp" value="Back"/>
+        </s:form>
+
     </body>
-    <footer></footer>
+
+    <footer>
+
+    </footer>
 </html>

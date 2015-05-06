@@ -8,14 +8,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-	<link rel="stylesheet" type="text/css" href="ATMStyle1.css">
+	<link rel="stylesheet" type="text/css" href="/ATM/Views/ATMStyle1.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Bank of Kyle ATM</title>
     </head>
     <body>
         <header><h1>Welcome to Bank of Kyle's ATM service!</h1></header>
         <form method="link">
-            <input type="submit" value ="START" formaction="SwipeCard"/>
+            <input type="submit" value ="START" formaction="/ATM/Views/Auth/SwipeCard.jsp"/>
         </form>
         <footer></footer>
     </body>

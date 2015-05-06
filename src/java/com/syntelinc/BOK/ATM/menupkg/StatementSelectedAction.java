@@ -28,8 +28,9 @@ public class StatementSelectedAction extends ActionSupport implements SessionAwa
         userSession.put("menuSelection", "printStatement");
         
         Hibernate hib = new Hibernate();
-        //this.accountList = hib.selectAccounts(userSession.get("userid"));
-        this.accountList = hib.selectAccounts(0);
+        String userID = (String)userSession.get("userid");
+        this.accountList = hib.selectAccounts(Integer.parseInt(userID));
+//        this.accountList = hib.selectAccounts(0);
         System.out.println(accountList.get(0).getClass());
         ActionContext.getContext().getValueStack().push(accountList);
         return SUCCESS;

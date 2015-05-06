@@ -1,7 +1,11 @@
 package com.syntelinc.BOK.ATM.ministatement;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import com.syntelinc.BOK.ATM.menupkg.Checkingacct;
+import com.syntelinc.BOK.ATM.menupkg.Hibernate;
 import com.syntelinc.BOK.ATM.menupkg.Userdetails;
+import com.syntelinc.BOK.ATM.transactionpkg.CheckingTransaction;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -33,23 +37,38 @@ public class MiniStatement extends ActionSupport implements SessionAware {
 
     @Override
     public String execute() throws Exception {
-        Configuration cfg = new Configuration().configure();
-        SessionFactory sf = cfg.buildSessionFactory();
-        Session s = sf.openSession();
-        Transaction trn = s.beginTransaction();
+//        Configuration cfg = new Configuration().configure();
+//        SessionFactory sf = cfg.buildSessionFactory();
+//        Session s = sf.openSession();
+//        Transaction trn = s.beginTransaction();
 
-        Query q = s.createQuery(" select ud.name as cust, ud.userID as account, ct.time as checkingTime, st.time as savingTIme, \n"
-                + "ct.details as checkingDetails, st.details as savingDetails, st.balance as savingBalance, ct.balance as checkingBalance\n"
-                + "from userdetails ud \n"
-                + "join checkingacct ca \n"
-                + "on ud.userid=ca.userid \n"
-                + "join savingacct sa\n"
-                + "on ud.userid = ca.userid \n"
-                + "join checkingtrans ct \n"
-                + "on ca.checkingid = ct.checkingid\n"
-                + "join savingtrans st\n"
-                + "on sa.SAVINGID = st.SAVINGID;");
-        List<Userdetails> details = q.list();
+//        Query q = s.createQuery(" select ud.name as cust, ud.userID as account, ct.time as checkingTime, st.time as savingTIme, \n"
+//                + "ct.details as checkingDetails, st.details as savingDetails, st.balance as savingBalance, ct.balance as checkingBalance\n"
+//                + "from userdetails ud \n"
+//                + "join checkingacct ca \n"
+//                + "on ud.userid=ca.userid \n"
+//                + "join savingacct sa\n"
+//                + "on ud.userid = ca.userid \n"
+//                + "join checkingtrans ct \n"
+//                + "on ca.checkingid = ct.checkingid\n"
+//                + "join savingtrans st\n"
+//                + "on sa.SAVINGID = st.SAVINGID");
+        
+        userSession = ActionContext.getContext().getSession();
+        Hibernate hib = new Hibernate();
+        String aType = (String) userSession.get("accounttype");
+        List accountList = hib.getAccount(Integer.parseInt((String)userSession.get("userid")), aType);
+        if(aType.equals("checking")) {
+            Checkingacct checkingAccount = (Checkingacct)accountList.get(0);
+            //checkingAccount.
+            
+        }
+        int uID = Integer.parseInt((String)userSession.get("accountid"));
+        System.out.println("USER ID AS AN INTEGER:  "+uID+"  ACCOUNT TYPE:  "+aType);
+        List transactionList = hib.getTransactions(uID, aType);
+        ActionContext.getContext().getValueStack().push(transactionList);
+        CheckingTransaction tran = (CheckingTransaction)transactionList.get(0);
+        System.out.println("account id associated with this transaction objecT: "+tran.getAcctid());
         return SUCCESS;
     }
 

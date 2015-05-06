@@ -27,6 +27,7 @@
                 String curr = formatter.format(bal);
             %>
             Your new account balance is <%= curr %>.<br>
+            Please note that your balance may not change when depositing a check, subce it will take time for an administrator to clear your credits.<br>
             Would you like to perform another transaction?<br>
             <form method="link">
                 <input type="submit" value="Yes" formaction="/ATM/Views/MainMenu.jsp"/>

@@ -11,6 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="/ATM/Views/ATMStyle1.css">
         <title>ATM</title>
     </head>
     <body>

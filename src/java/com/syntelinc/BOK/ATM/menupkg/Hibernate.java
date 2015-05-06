@@ -148,7 +148,7 @@ public class Hibernate {
         else
         {
             transac = new SavingsTransaction();
-            q = session.createSQLQuery("select balance from savingstrans where acctid=?");
+            q = session.createSQLQuery("select balance from savingtrans where acctid=?");
         }
         transac.setAcctid(accountID);
         
